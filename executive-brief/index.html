@@ -60,11 +60,11 @@
 [data-theme="dark"] {
   --bg: #1c1c1e;
   --white: #2a2a2e;
-  --border: rgba(255,255,255,0.1);
-  --border-light: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.14);
+  --border-light: rgba(255,255,255,0.08);
   --text: #F5E6D3;
-  --text-secondary: #b8a99a;
-  --text-tertiary: #8a7e74;
+  --text-secondary: #d4c4b0;
+  --text-tertiary: #a89880;
   --navy: #F5E6D3;
   --green-wash: rgba(42,125,91,0.12);
   --green-wash-alt: rgba(42,125,91,0.08);
@@ -78,15 +78,19 @@
   border-bottom-color: rgba(255,255,255,0.08);
 }
 [data-theme="dark"] .compare-bar-fill span { color: #fff; }
-[data-theme="dark"] .compare-bar-track { background: rgba(255,255,255,0.06); }
+[data-theme="dark"] .compare-bar-track { background: rgba(255,255,255,0.12); }
 [data-theme="dark"] .data-table th { border-bottom-color: rgba(255,255,255,0.15); }
 [data-theme="dark"] .data-table td { border-bottom-color: rgba(255,255,255,0.06); }
 [data-theme="dark"] svg text { fill: var(--text); }
 [data-theme="dark"] svg text[fill="#999"] { fill: var(--text-tertiary); }
 [data-theme="dark"] svg circle[stroke="#E8E8E8"] { stroke: rgba(255,255,255,0.1); }
 [data-theme="dark"] .callout { background: var(--green-wash); border-left-color: var(--green-primary); }
+[data-theme="dark"] .callout .callout-text { color: var(--text); }
 [data-theme="dark"] .callout.amber-callout { background: var(--amber-wash); border-left-color: var(--amber); }
 [data-theme="dark"] .callout.coral-callout { background: var(--coral-wash); border-left-color: var(--coral); }
+[data-theme="dark"] .phase-detail ul { color: var(--text-secondary); }
+[data-theme="dark"] .data-table th { color: var(--text-secondary); }
+[data-theme="dark"] .chart-subtitle { color: var(--text-secondary); }
 
 /* ---- Theme Toggle ---- */
 .theme-toggle {
