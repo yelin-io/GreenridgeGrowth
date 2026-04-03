@@ -654,6 +654,7 @@ body {
   .chart-row { grid-template-columns: 1fr; }
   .next-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
+  .side-nav { display: none !important; }
   .phase-detail { padding: 20px; }
   .phase-detail-price { font-size: 1.3rem; }
   .timeline-horiz { height: 32px; }
@@ -678,6 +679,70 @@ body {
   .section + .section { border-top: 1px solid #ddd; }
   svg text { fill: #1A1A2E !important; }
 }
+
+/* ---- Side Nav (scroll spy) ---- */
+.side-nav {
+  position: fixed;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+}
+.side-nav.visible { opacity: 1; pointer-events: auto; }
+.side-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  text-decoration: none;
+  transition: all 0.2s var(--ease);
+}
+.side-nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all 0.25s var(--ease);
+  flex-shrink: 0;
+}
+.side-nav-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  transition: color 0.2s, transform 0.2s var(--ease);
+  white-space: nowrap;
+}
+.side-nav-item:hover .side-nav-label { color: var(--green-primary); transform: translateX(2px); }
+.side-nav-item:hover .side-nav-dot { background: var(--green-primary); transform: scale(1.4); }
+.side-nav-item.active .side-nav-dot {
+  background: var(--green-primary);
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 0 3px rgba(42,125,91,0.15);
+}
+.side-nav-item.active .side-nav-label { color: var(--green-deep); }
+.side-nav::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: var(--border-light);
+  z-index: -1;
+}
+@media (max-width: 1100px) and (min-width: 769px) {
+  .side-nav-label { display: none; }
+  .side-nav { left: 16px; }
+}
 </style>
 </head>
 <body>
@@ -700,6 +765,16 @@ body {
     <span class="nav-badge confidential">Confidential</span>
   </div>
 </nav>
+
+<!-- ========== SIDE NAV (scroll spy) ========== -->
+<div class="side-nav" id="sideNav">
+  <a href="#summary" class="side-nav-item active"><div class="side-nav-dot"></div><span class="side-nav-label">Summary</span></a>
+  <a href="#sourcing" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Sourcing</span></a>
+  <a href="#deal" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Deal Exec</span></a>
+  <a href="#portfolio" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Portfolio</span></a>
+  <a href="#investment" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Investment</span></a>
+  <a href="#next" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Next</span></a>
+</div>
 
 <!-- ========== HERO ========== -->
 <section class="hero">
@@ -1324,6 +1399,29 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('ggp-brief-theme', 'dark');
     }
   });
+
+  // Side nav scroll spy
+  var sectionIds = ['summary', 'sourcing', 'deal', 'portfolio', 'investment', 'next'];
+  var sideLinks = document.querySelectorAll('.side-nav-item');
+  var sideNav = document.getElementById('sideNav');
+  var topNav = document.querySelector('.nav');
+  function updateActiveSection() {
+    var scrollY = window.scrollY + 80;
+    var currentId = sectionIds[0];
+    for (var i = sectionIds.length - 1; i >= 0; i--) {
+      var el = document.getElementById(sectionIds[i]);
+      if (el && el.offsetTop <= scrollY) { currentId = sectionIds[i]; break; }
+    }
+    var href = '#' + currentId;
+    sideLinks.forEach(function(link) {
+      link.classList.toggle('active', link.getAttribute('href') === href);
+    });
+    if (sideNav && topNav) {
+      sideNav.classList.toggle('visible', topNav.getBoundingClientRect().bottom < 0);
+    }
+  }
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  updateActiveSection();
 });
 </script>
 
