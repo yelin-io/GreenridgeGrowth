@@ -1416,8 +1416,10 @@ document.addEventListener('DOMContentLoaded', function() {
     sideLinks.forEach(function(link) {
       link.classList.toggle('active', link.getAttribute('href') === href);
     });
-    if (sideNav && topNav) {
-      sideNav.classList.toggle('visible', topNav.getBoundingClientRect().bottom < 0);
+    if (sideNav) {
+      var heroSection = document.querySelector('.hero');
+      var pastHero = heroSection ? window.scrollY > heroSection.offsetHeight : window.scrollY > 300;
+      sideNav.classList.toggle('visible', pastHero);
     }
   }
   window.addEventListener('scroll', updateActiveSection, { passive: true });
