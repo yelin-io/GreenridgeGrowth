@@ -752,14 +752,15 @@ body {
   .phase-detail-price { font-size: 1.2rem; }
   .phase-detail-duration { font-size: 0.75rem; }
 
-  /* Timeline -> vertical stack */
-  .timeline-horiz { flex-direction: column; height: auto; border-radius: 8px; }
+  /* Timeline -> vertical stack with full-width bars */
+  .timeline-horiz { flex-direction: column; height: auto; border-radius: 8px; gap: 6px; }
   .timeline-week-labels { display: none; }
   .timeline-horiz-seg {
-    height: 40px;
-    border-radius: 6px;
-    margin-bottom: 4px;
-    font-size: 0.7rem;
+    width: 100% !important;
+    flex: none !important;
+    height: 44px;
+    border-radius: 8px;
+    font-size: 0.75rem;
   }
   .timeline-horiz-gate { display: none; }
 
