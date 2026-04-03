@@ -1569,11 +1569,6 @@ document.addEventListener('DOMContentLoaded', function() {
       mobileLinks.forEach(function(link) {
         link.classList.toggle('active', link.getAttribute('data-section') === currentId);
       });
-      if (mobileNav) {
-        var diff = window.scrollY - lastScrollY;
-        if (diff > scrollThreshold) mobileNav.classList.add('hidden');
-        else if (diff < -scrollThreshold) mobileNav.classList.remove('hidden');
-      }
       lastScrollY = window.scrollY;
       ticking = false;
     });
