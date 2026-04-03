@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GGP AI Consulting Engagement Brief | Yelin.io</title>
+<style>
+/* ========================================
+   Precision Clarity -- GGP Edition
+   Refined editorial. System fonts. Print-first SVG.
+   ======================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green-primary: #2A7D5B;
+  --green-dark: #1F5F44;
+  --green-deep: #16473A;
+  --green-wash: #EDF7F2;
+  --green-wash-alt: #E0F0E8;
+
+  --amber: #D4A853;
+  --amber-dark: #C8960B;
+  --amber-wash: #FFF8EC;
+
+  --navy: #1A1A2E;
+  --green-accent: #4BAF50;
+  --green-accent-wash: #F0F7EE;
+  --coral: #E8704A;
+  --coral-wash: #FEF0EB;
+  --red: #E05252;
+  --red-wash: #FDF0F0;
+
+  --bg: #FAFAFA;
+  --white: #FFFFFF;
+  --border: #E8E8E8;
+  --border-light: #F0F0F0;
+
+  --text: #1D1D1F;
+  --text-secondary: #6E6E73;
+  --text-tertiary: #999999;
+
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --mono: 'Courier New', Courier, monospace;
+  --max-w: 900px;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ---- Dark Mode ---- */
+[data-theme="dark"] {
+  --bg: #1c1c1e;
+  --white: #2a2a2e;
+  --border: rgba(255,255,255,0.1);
+  --border-light: rgba(255,255,255,0.06);
+  --text: #F5E6D3;
+  --text-secondary: #b8a99a;
+  --text-tertiary: #8a7e74;
+  --navy: #F5E6D3;
+  --green-wash: rgba(42,125,91,0.12);
+  --green-wash-alt: rgba(42,125,91,0.08);
+  --amber-wash: rgba(212,168,83,0.12);
+  --green-accent-wash: rgba(75,175,80,0.12);
+  --coral-wash: rgba(232,112,74,0.12);
+  --red-wash: rgba(224,82,82,0.12);
+}
+[data-theme="dark"] .nav {
+  background: rgba(28,28,30,0.9);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .compare-bar-fill span { color: #fff; }
+[data-theme="dark"] .compare-bar-track { background: rgba(255,255,255,0.06); }
+[data-theme="dark"] .data-table th { border-bottom-color: rgba(255,255,255,0.15); }
+[data-theme="dark"] .data-table td { border-bottom-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] svg text { fill: var(--text); }
+[data-theme="dark"] svg text[fill="#999"] { fill: var(--text-tertiary); }
+[data-theme="dark"] svg circle[stroke="#E8E8E8"] { stroke: rgba(255,255,255,0.1); }
+[data-theme="dark"] .callout { background: var(--green-wash); border-left-color: var(--green-primary); }
+[data-theme="dark"] .callout.amber-callout { background: var(--amber-wash); border-left-color: var(--amber); }
+[data-theme="dark"] .callout.coral-callout { background: var(--coral-wash); border-left-color: var(--coral); }
+
+/* ---- Theme Toggle ---- */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.theme-toggle:hover { color: var(--green-primary); border-color: var(--green-primary); }
+
+html { font-size: 17px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Scroll Reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ---- Nav ---- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,250,250,0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--green-deep);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--green-primary); }
+.nav-badge {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+/* ---- Container ---- */
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
+
+/* ---- Hero ---- */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 680px; }
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green-primary);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.hero-client {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  margin-bottom: 36px;
+}
+.hero-meta { font-size: 0.78rem; color: var(--text-tertiary); }
+.hero-meta span { margin: 0 8px; }
+
+/* ---- Section ---- */
+.section { padding: 72px 0; }
+.section + .section { border-top: 1px solid var(--border-light); }
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green-primary);
+  margin-bottom: 10px;
+}
+.section-label.amber { color: var(--amber-dark); }
+.section-label.coral { color: var(--coral); }
+.section-label.green-accent { color: var(--green-accent); }
+.section h2 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.section-lead {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+/* ---- KPI Row ---- */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.kpi-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  transition: box-shadow 0.3s var(--ease), transform 0.2s var(--ease);
+}
+.kpi-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
+}
+.kpi-value {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.kpi-value.green-primary { color: var(--green-deep); }
+.kpi-value.amber { color: var(--amber-dark); }
+.kpi-value.green-accent { color: var(--green-accent); }
+.kpi-value.coral { color: var(--coral); }
+.kpi-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.kpi-sub {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+/* ---- Chart Container ---- */
+.chart-block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 32px;
+}
+.chart-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.chart-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  margin-bottom: 24px;
+}
+.chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+/* ---- Comparison Bar ---- */
+.compare-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.compare-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  min-width: 100px;
+}
+.compare-bar-track {
+  flex: 1;
+  height: 32px;
+  background: var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.compare-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+.compare-bar-fill span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.compare-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  background: var(--green-wash);
+  padding: 3px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ---- Table ---- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 0.82rem;
+}
+.data-table th {
+  text-align: left;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--border);
+}
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text);
+  vertical-align: top;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .highlight { font-weight: 600; color: var(--green-deep); }
+.data-table .badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge-green-accent { background: var(--green-accent-wash); color: var(--green-accent); }
+.badge-amber { background: var(--amber-wash); color: var(--amber-dark); }
+.badge-red { background: var(--red-wash); color: var(--red); }
+.badge-green-primary { background: var(--green-wash); color: var(--green-deep); }
+
+/* ---- Status Grid ---- */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-dot.green-accent { background: var(--green-accent); }
+.status-dot.amber { background: var(--amber); }
+.status-dot.red { background: var(--red); }
+
+/* ---- Timeline ---- */
+.timeline { margin-top: 32px; position: relative; padding-left: 28px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
+  border-radius: 2px;
+}
+.tl-item {
+  position: relative;
+  padding-bottom: 24px;
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute;
+  left: -25px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green-primary);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px var(--green-primary);
+}
+.tl-dot.amber { background: var(--amber); box-shadow: 0 0 0 2px var(--amber); }
+.tl-dot.green-accent { background: var(--green-accent); box-shadow: 0 0 0 2px var(--green-accent); }
+.tl-dot.coral { background: var(--coral); box-shadow: 0 0 0 2px var(--coral); }
+.tl-date {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.tl-title {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text);
+  margin-top: 2px;
+}
+.tl-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+/* ---- Callout Box ---- */
+.callout {
+  background: var(--green-wash);
+  border-left: 3px solid var(--green-primary);
+  border-radius: 0 10px 10px 0;
+  padding: 20px 24px;
+  margin-top: 24px;
+}
+.callout.amber-callout {
+  background: var(--amber-wash);
+  border-left-color: var(--amber);
+}
+.callout.coral-callout {
+  background: var(--coral-wash);
+  border-left-color: var(--coral);
+}
+.callout-title {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.callout-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ---- Next Steps Cards ---- */
+.next-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+.next-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+}
+.next-card-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  margin-bottom: 8px;
+}
+.next-card h4 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.next-card p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ---- Footer ---- */
+.footer {
+  text-align: center;
+  padding: 48px 32px;
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+}
+.footer-logo {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--green-deep);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.footer-text {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+}
+
+/* ---- Phase Detail Cards ---- */
+.phase-detail {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.3s var(--ease), transform 0.2s var(--ease);
+}
+.phase-detail:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
+}
+.phase-detail.phase-1 { border-top: 3px solid var(--green-primary); }
+.phase-detail.phase-2 { border-top: 3px solid var(--amber); }
+.phase-detail.phase-3 { border-top: 3px solid var(--coral); }
+.phase-detail-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.phase-detail-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.phase-detail-price {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.phase-detail-duration {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  margin-bottom: 16px;
+}
+.phase-detail ul {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  padding-left: 16px;
+}
+
+/* ---- Confidential Badge ---- */
+.nav-badge.confidential {
+  color: var(--red);
+  border-color: rgba(224,82,82,0.3);
+  background: var(--red-wash);
+}
+
+/* ---- Horizontal Timeline ---- */
+.timeline-horiz {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 40px;
+}
+.timeline-horiz-seg {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+}
+.timeline-horiz-gate {
+  width: 3px;
+  height: 100%;
+  background: var(--white);
+}
+
+/* ---- Pain Grid ---- */
+.pain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .chart-row { grid-template-columns: 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .phase-detail { padding: 20px; }
+  .phase-detail-price { font-size: 1.3rem; }
+  .timeline-horiz { height: 32px; }
+  .timeline-horiz-seg { font-size: 0.6rem; }
+  .pain-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Print ---- */
+@media print {
+  html[data-theme="dark"] { --bg: #fff; --white: #fff; --text: #1D1D1F; --text-secondary: #6E6E73; --text-tertiary: #999; --navy: #1A1A2E; --border: #E8E8E8; --border-light: #F0F0F0; --green-wash: #EDF7F2; --amber-wash: #FFF8EC; --green-accent-wash: #F0F7EE; --coral-wash: #FEF0EB; --red-wash: #FDF0F0; }
+  .nav { display: none; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero { min-height: auto; padding: 40px 0; page-break-after: always; }
+  .section { padding: 32px 0; }
+  .kpi-card:hover, .next-card:hover { box-shadow: none; transform: none; }
+  body { font-size: 11pt; background: white; color: #1D1D1F; }
+  .chart-block { break-inside: avoid; }
+  .data-table { break-inside: avoid; }
+  .status-grid { break-inside: avoid; }
+  .timeline { break-inside: avoid; }
+  .roi-section { break-inside: avoid; }
+  .section + .section { border-top: 1px solid #ddd; }
+  svg text { fill: #1A1A2E !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="nav">
+  <div class="nav-logo">YELIN.IO</div>
+  <ul class="nav-links">
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#sourcing">Sourcing</a></li>
+    <li><a href="#deal">Deal Exec</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#investment">Investment</a></li>
+    <li><a href="#next">Next</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span id="themeIcon">&#9790;</span> Dark
+    </button>
+    <span class="nav-badge confidential">Confidential</span>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-inner reveal">
+    <div class="hero-eyebrow">AI Consulting Engagement Brief</div>
+    <h1>An AI Operating Model<br>for Greenridge Growth Partners</h1>
+    <div class="hero-sub">A phased engagement spanning sourcing, deal execution, and portfolio operations -- from individual tool adoption to a firm-wide AI strategy.</div>
+    <div class="hero-client">Prepared for Andrew Bell, VP Value Creation</div>
+    <div class="hero-meta">
+      <span>April 2026</span>
+      <span>&middot;</span>
+      <span>Yelin.io</span>
+      <span>&middot;</span>
+      <span>Greenridge Growth Partners</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EXECUTIVE SUMMARY ========== -->
+<section class="section" id="summary">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-label">01 -- Executive Summary</div>
+      <h2>Optimize Today.<br>Build for Tomorrow.</h2>
+      <p class="section-lead">Following our discovery sessions in February and March 2026, Yelin.io proposes a phased AI consulting engagement organized around GGP's three core departments: sourcing, deal execution, and portfolio operations. The goal is to optimize your 7 active use case areas for immediate impact, train the full team on AI-first workflows, and deploy targeted AI tools that address the highest-value opportunities identified in your Strategy Brief.</p>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi-card reveal reveal-delay-1">
+        <div class="kpi-value green-primary">15</div>
+        <div class="kpi-label">Team Members</div>
+        <div class="kpi-sub">Cross-functional PE firm</div>
+      </div>
+      <div class="kpi-card reveal reveal-delay-2">
+        <div class="kpi-value green-primary">18</div>
+        <div class="kpi-label">Portfolio Companies</div>
+        <div class="kpi-sub">8 successful exits</div>
+      </div>
+      <div class="kpi-card reveal reveal-delay-3">
+        <div class="kpi-value amber">$255M</div>
+        <div class="kpi-label">Fund II Capital</div>
+        <div class="kpi-sub">Current fund commitments</div>
+      </div>
+      <div class="kpi-card reveal">
+        <div class="kpi-value amber">7</div>
+        <div class="kpi-label">Active Use Cases</div>
+        <div class="kpi-sub">Documented in Best Practices guide</div>
+      </div>
+    </div>
+
+    <!-- Department Maturity -->
+    <div class="chart-block reveal" style="margin-top: 32px;">
+      <div class="chart-title">Department AI Readiness</div>
+      <div class="chart-subtitle">Current maturity across three core functions</div>
+      <div style="margin-top: 16px;">
+        <div class="compare-row">
+          <div class="compare-label">Sourcing</div>
+          <div class="compare-bar-track">
+            <div class="compare-bar-fill" style="width: 75%; background: var(--green-primary);">
+              <span>Most Developed</span>
+            </div>
+          </div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Portfolio Ops</div>
+          <div class="compare-bar-track">
+            <div class="compare-bar-fill" style="width: 55%; background: var(--amber);">
+              <span>Well-Developed</span>
+            </div>
+          </div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Deal Execution</div>
+          <div class="compare-bar-track">
+            <div class="compare-bar-fill" style="width: 25%; min-width: 90px; background: var(--text-tertiary);">
+              <span>Early Stage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firm-Wide AI Workflows -->
+    <div class="chart-block reveal" style="margin-top: 24px;">
+      <div class="chart-title">Firm-Wide AI Workflows</div>
+      <div class="chart-subtitle">Cross-functional capabilities used across all departments</div>
+      <div class="status-grid">
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>Legal Document Analysis</strong> Employment agreements, NDAs, vendor contracts</div>
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>Excel &amp; Financial Model Review</strong> Auditing strong, building from scratch unreliable</div>
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>M365 Email, Calendar &amp; File Synthesis</strong> Inbox triage, thread summaries, calendar review</div>
+        <div class="status-item"><div class="status-dot amber"></div><strong>Unstructured Document Structuring</strong> Contracts and pricing proposals normalized into tables</div>
+        <div class="status-item"><div class="status-dot amber"></div><strong>Writing, Editing &amp; Communication</strong> Drafting, reformatting, proofreading across teams</div>
+      </div>
+    </div>
+
+    <div class="callout reveal" style="margin-top: 24px;">
+      <div class="callout-title">Our Approach</div>
+      <div class="callout-text">Teach and guide, not do and leave. Every tool, workflow, and agent we build is designed for GGP to own and operate independently. The engagement ends with your team running everything -- no retainer dependency, no external bottleneck.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOURCING ========== -->
+<section class="section" id="sourcing">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-label">02 -- Sourcing</div>
+      <h2>From Static Lists to<br>Dynamic Intelligence</h2>
+      <p class="section-lead">Sourcing is GGP's most-developed AI function -- and the one with the highest immediate upside. Your team already uses AI daily for research, outreach, and CRM updates. The opportunity is to connect these workflows into a unified intelligence layer.</p>
+    </div>
+
+    <!-- Active Sourcing Workflows -->
+    <div class="chart-block reveal">
+      <div class="chart-title">Active Sourcing Workflows</div>
+      <div class="chart-subtitle">From GGP's AI Best Practices Guide (March 2026)</div>
+      <div class="status-grid">
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>Industry &amp; Company Research</strong> Most-used workflow across the sourcing team</div>
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>Cold Outreach Closing Writer</strong> Custom tool generating portfolio-relevant closing sentences</div>
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>CRM Updates from Email</strong> Reads Outlook threads, drafts DealCloud summary notes</div>
+      </div>
+    </div>
+
+    <!-- Pain Points -->
+    <div class="chart-block reveal">
+      <div class="chart-title">Where the Friction Lives</div>
+      <div class="chart-subtitle">Key gaps identified in GGP's AI Strategy Brief</div>
+      <div style="margin-top: 16px;">
+        <div class="compare-row">
+          <div class="compare-label">Lead Prioritization</div>
+          <div class="compare-bar-track">
+            <div class="compare-bar-fill" style="width: 20%; min-width: 50px; background: var(--coral);"><span>Static</span></div>
+          </div>
+          <div class="compare-badge" style="background: var(--coral-wash); color: var(--coral);">Not Event-Driven</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Information Access</div>
+          <div class="compare-bar-track">
+            <div class="compare-bar-fill" style="width: 30%; min-width: 50px; background: var(--coral);"><span>Siloed</span></div>
+          </div>
+          <div class="compare-badge" style="background: var(--coral-wash); color: var(--coral);">4+ Systems</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Outreach Quality</div>
+          <div class="compare-bar-track">
+            <div class="compare-bar-fill" style="width: 45%; background: var(--amber);"><span>Inconsistent</span></div>
+          </div>
+          <div class="compare-badge" style="background: var(--amber-wash); color: var(--amber-dark);">Degrades at Volume</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Feedback Loop</div>
+          <div class="compare-bar-track">
+            <div class="compare-bar-fill" style="width: 15%; min-width: 50px; background: var(--coral);"><span>Inconsistent</span></div>
+          </div>
+          <div class="compare-badge" style="background: var(--coral-wash); color: var(--coral);">Breaks Down in Practice</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Wins -->
+    <div class="chart-block reveal">
+      <div class="chart-title">Quick Wins -- Phase 2 Tool Deployment</div>
+      <div class="chart-subtitle">Targeted AI tools deployed after Phase 1 foundation is in place</div>
+      <div class="next-grid" style="margin-top: 16px;">
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--green-primary);">Quick Win</div>
+          <h4>Call Transcript to DealCloud</h4>
+          <p>Auto-extract key data points from call transcripts and draft DealCloud entries. Eliminates manual note transfer.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--green-primary);">Quick Win</div>
+          <h4>Dynamic Lead Scoring</h4>
+          <p>Event-driven prioritization replacing static lists. Score prospects based on signals, not just position in the pipeline.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--green-primary);">Quick Win</div>
+          <h4>Messaging Hook Surfacing</h4>
+          <p>AI identifies compelling angles per prospect from portfolio overlap, industry trends, and recent events.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--green-primary);">Quick Win</div>
+          <h4>News Aggregation</h4>
+          <p>Automated monitoring of prospects, sectors, and portfolio adjacencies. Alerts on leadership changes, funding, and competitive moves.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- North Star -->
+    <div class="callout reveal" style="margin-top: 24px;">
+      <div class="callout-title">The North Star</div>
+      <div class="callout-text">"I have an hour -- what are the 20 most impactful things I can do at top of funnel right now?" That question should have an answer every morning. The AI-enabled sourcing vision connects DealCloud, Outlook, OneNote, LinkedIn, and call transcripts into a single intelligence layer that drives prioritized action.</div>
+    </div>
+
+    <!-- Key Data -->
+    <div class="kpi-row reveal" style="grid-template-columns: repeat(3, 1fr); margin-top: 24px;">
+      <div class="kpi-card">
+        <div class="kpi-value green-primary">6,500</div>
+        <div class="kpi-label">Active Prospects</div>
+        <div class="kpi-sub">In DealCloud pipeline</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value amber">4+</div>
+        <div class="kpi-label">Data Systems</div>
+        <div class="kpi-sub">DealCloud, Outlook, OneNote, LinkedIn</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value green-accent">1</div>
+        <div class="kpi-label">Custom Tool Built</div>
+        <div class="kpi-sub">Closing sentence writer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DEAL EXECUTION ========== -->
+<section class="section" id="deal">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-label amber">03 -- Deal Execution</div>
+      <h2>Strategic Opportunity,<br>Not a Gap</h2>
+      <p class="section-lead">Deal execution AI is at its earliest stages across the PE industry. With no imminent active transaction, GGP has the advantage of building deliberately rather than reactively.</p>
+    </div>
+
+    <!-- Pain Points (3 only -- sourced from Strategy Brief) -->
+    <div class="chart-block reveal">
+      <div class="chart-title">Known Friction Points</div>
+      <div class="chart-subtitle">Areas where AI can accelerate deal evaluation</div>
+      <div class="status-grid">
+        <div class="status-item"><div class="status-dot amber"></div><strong>Time-to-quality on analysis</strong> Manual research slows deal evaluation</div>
+        <div class="status-item"><div class="status-dot amber"></div><strong>Operating model construction</strong> Repetitive framework building across deals</div>
+        <div class="status-item"><div class="status-dot amber"></div><strong>Data room evaluation</strong> Volume of documents exceeds review capacity</div>
+      </div>
+    </div>
+
+    <!-- Emerging Opportunities -->
+    <div class="chart-block reveal">
+      <div class="chart-title">Emerging Opportunities</div>
+      <div class="chart-subtitle">Capabilities to evaluate in Phase 3 custom development</div>
+      <div class="next-grid" style="margin-top: 16px;">
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--coral);">Phase 3</div>
+          <h4>QuickBooks via Strongbox</h4>
+          <p>Automated financial data extraction for diligence. Structured output from unstructured accounting data across portfolio companies.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--coral);">Phase 3</div>
+          <h4>Intelligent Data Room Search</h4>
+          <p>AI-assisted document search and extraction across data rooms. Surface key terms, risks, and comparable clauses in minutes instead of days.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout amber-callout reveal" style="margin-top: 24px;">
+      <div class="callout-title">Strategic Framing</div>
+      <div class="callout-text">Deal execution will be the last department to fully adopt AI -- and that is the right sequencing. The near-term focus is building the sourcing and portfolio intelligence that feeds into deals. Phase 2 scopes this area based on what the team discovers in Phase 1, when real workflows and priorities emerge from daily usage.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PORTFOLIO MONITORING & OPERATIONS ========== -->
+<section class="section" id="portfolio">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-label coral">04 -- Portfolio Monitoring &amp; Operations</div>
+      <h2>18 Companies.<br>A Clear Path Forward.</h2>
+      <p class="section-lead">The portfolio dashboard is the long-term vision. The path starts with AI-native tools that reduce meeting prep, surface institutional knowledge, and lay the groundwork for the consolidated data view your team envisions.</p>
+    </div>
+
+    <!-- Two Pain Areas -->
+    <div class="chart-block reveal">
+      <div class="chart-title">Two Pain Areas, One Root Cause</div>
+      <div class="chart-subtitle">Data is scattered. Knowledge is in people's heads.</div>
+      <div class="pain-grid">
+        <div>
+          <div style="font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; color: var(--navy);">Monitoring Pain</div>
+          <ul style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.8; padding-left: 16px;">
+            <li>Gathering and normalizing data per company</li>
+            <li>HubSpot, QuickBooks, OneNote, board materials</li>
+            <li>Competitive and market context disconnected</li>
+            <li>No single view across the full portfolio</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; color: var(--navy);">Operations Pain</div>
+          <ul style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.8; padding-left: 16px;">
+            <li>Meeting prep takes too long</li>
+            <li>Playbooks and frameworks not codified</li>
+            <li>Cross-pollination between portcos does not happen</li>
+            <li>Institutional knowledge lives in people, not systems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Dashboard Phases -->
+    <div class="chart-block reveal">
+      <div class="chart-title">Portfolio Dashboard Build</div>
+      <div class="chart-subtitle">Three phases -- each delivers standalone value</div>
+      <div class="timeline" style="margin-top: 16px;">
+        <div class="tl-item">
+          <div class="tl-dot green-accent"></div>
+          <div class="tl-date">Phase A</div>
+          <div class="tl-title">HubSpot &amp; Pipeline Data</div>
+          <div class="tl-desc">MRR, bookings, deal pipeline summaries across all 18 portfolio companies. Interactive filtering by company, stage, and date range. Alerts for stale deals and coverage gaps.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot amber"></div>
+          <div class="tl-date">Phase B</div>
+          <div class="tl-title">QuickBooks &amp; Financials</div>
+          <div class="tl-desc">Revenue, expenses, and cash position per company. Period-over-period and budget-vs-actual comparisons. Cross-portfolio financial benchmarks.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot coral"></div>
+          <div class="tl-date">Phase C</div>
+          <div class="tl-title">Competitive &amp; Market Intel</div>
+          <div class="tl-desc">Industry data, competitive positioning, and market signals. Automated monitoring for leadership changes, funding events, and regulatory shifts. Unified company profile.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Sources -->
+    <div class="chart-block reveal">
+      <div class="chart-title">Data Sources per Portfolio Company</div>
+      <div class="chart-subtitle">18 companies, 4 primary systems to connect</div>
+      <div class="status-grid">
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>HubSpot</strong> Primary CRM -- API available</div>
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>QuickBooks</strong> Financials -- Strongbox integration</div>
+        <div class="status-item"><div class="status-dot amber"></div><strong>OneNote</strong> Notes -- M365 API with limitations</div>
+        <div class="status-item"><div class="status-dot amber"></div><strong>DealCloud</strong> Deal tracking -- browser automation path</div>
+      </div>
+    </div>
+
+    <!-- Quick Wins -->
+    <div class="chart-block reveal">
+      <div class="chart-title">Phased Delivery</div>
+      <div class="chart-subtitle">Phase 2 tools address operations pain immediately. Dashboard is Phase 3 custom development.</div>
+      <div class="next-grid" style="margin-top: 16px;">
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--amber);">Phase 2</div>
+          <h4>OneNote Weekly Digest</h4>
+          <p>Auto-generated summary of shared notebook updates across portfolio companies. Key changes surfaced, not buried.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--amber);">Phase 2</div>
+          <h4>Meeting Prep Agent</h4>
+          <p>Calendar-driven briefings pulling email threads, CRM records, recent news, and prior meeting context. Ready before every call.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--coral);">Phase 3</div>
+          <h4>Bi-Weekly HubSpot Summary</h4>
+          <p>Automated email digest of pipeline changes per portfolio company. Requires HubSpot API integration across 18 instances.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-card-tag" style="color: var(--coral);">Phase 3</div>
+          <h4>Single-Metric MRR Pull</h4>
+          <p>Current MRR visibility across the portfolio. Requires QuickBooks integration and chart of accounts normalization.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout reveal" style="margin-top: 24px;">
+      <div class="callout-title">Per-Company Economics</div>
+      <div class="callout-text">At the midpoint of Phases 1 and 2, the investment represents roughly <strong>$4,400-$6,100 per portfolio company</strong> for AI enablement spanning both the firm and its investments. Each company gets its own Claude Project with tailored context, optimized workflows, and trained points of contact, creating a foundation that scales with the firm.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ENGAGEMENT APPROACH ========== -->
+<section class="section roi-section" id="investment" style="background: var(--green-wash);">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-label green-accent">05 -- Engagement Approach</div>
+      <h2>Three Phases.<br>One Commitment at a Time.</h2>
+      <p class="section-lead">Fixed-fee per phase with Go/No-Go reviews between each. Phase 1 is the only upfront commitment. Phases 2 and 3 are scoped and priced based on the results and priorities that emerge.</p>
+    </div>
+
+    <!-- ROI Hero Cards -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px;">
+      <div class="chart-block reveal" style="border: 2px solid var(--green-primary); text-align: center; padding: 36px 24px;">
+        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 12px;">Phases 1 &amp; 2</div>
+        <div style="font-family: var(--serif); font-size: 3.5rem; color: var(--green-deep); line-height: 1; margin-bottom: 4px;">$80-110K</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">Phase 3 custom dev scoped independently</div>
+        <div style="display: flex; justify-content: center; gap: 20px; padding-top: 16px; border-top: 1px solid var(--border);">
+          <div>
+            <div style="font-family: var(--serif); font-size: 1.4rem; color: var(--green-primary);">15</div>
+            <div style="font-size: 0.68rem; color: var(--text-tertiary);">team members</div>
+          </div>
+          <div>
+            <div style="font-family: var(--serif); font-size: 1.4rem; color: var(--green-primary);">18</div>
+            <div style="font-size: 0.68rem; color: var(--text-tertiary);">portfolio companies</div>
+          </div>
+          <div>
+            <div style="font-family: var(--serif); font-size: 1.4rem; color: var(--green-primary);">7</div>
+            <div style="font-size: 0.68rem; color: var(--text-tertiary);">use case areas</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-block reveal" style="border: 2px solid var(--amber); text-align: center; padding: 36px 24px;">
+        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 12px;">Phase 1 Entry Point</div>
+        <div style="font-family: var(--serif); font-size: 3.5rem; color: var(--amber-dark); line-height: 1; margin-bottom: 4px;">$25-35K</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">the only upfront commitment</div>
+        <div style="display: flex; justify-content: center; gap: 20px; padding-top: 16px; border-top: 1px solid var(--border);">
+          <div>
+            <div style="font-family: var(--serif); font-size: 1.4rem; color: var(--amber);">4-6</div>
+            <div style="font-size: 0.68rem; color: var(--text-tertiary);">weeks</div>
+          </div>
+          <div>
+            <div style="font-family: var(--serif); font-size: 1.4rem; color: var(--amber);">7</div>
+            <div style="font-size: 0.68rem; color: var(--text-tertiary);">use cases optimized</div>
+          </div>
+          <div>
+            <div style="font-family: var(--serif); font-size: 1.4rem; color: var(--amber);">2-3</div>
+            <div style="font-size: 0.68rem; color: var(--text-tertiary);">training sessions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase Detail Cards -->
+    <div style="margin-top: 32px;">
+      <div class="phase-detail phase-1 reveal">
+        <div class="phase-detail-label" style="color: var(--green-primary);">Phase 1</div>
+        <div class="phase-detail-price">Team Deployment, Training &amp; Workflow Optimization</div>
+        <div class="phase-detail-duration">4-6 weeks -- $25,000-$35,000</div>
+        <ul>
+          <li>18 Claude Projects configured (one per portfolio company)</li>
+          <li>M365 inbox triage workflows for all 15 team members</li>
+          <li>2-3 training sessions: fundamentals, role-specific, advanced</li>
+          <li>ChatGPT Enterprise migration with context and workflows intact</li>
+          <li>AI usage standards, governance, and Cowork policy</li>
+          <li>Context file library and prompt architecture</li>
+          <li>7 active use case area optimizations</li>
+          <li>Call recording tool evaluation and recommendation</li>
+        </ul>
+      </div>
+      <div class="phase-detail phase-2 reveal">
+        <div class="phase-detail-label" style="color: var(--amber);">Phase 2</div>
+        <div class="phase-detail-price">Portfolio Company Deployment &amp; Operational Intelligence</div>
+        <div class="phase-detail-duration">8-10 weeks -- Scoped after Phase 1</div>
+        <ul>
+          <li>Zoom transcript to DealCloud skill</li>
+          <li>Messaging hook surfacing for outreach quality</li>
+          <li>Dynamic lead scoring with expert call integration</li>
+          <li>News aggregation monitoring</li>
+          <li>Meeting preparation agent</li>
+          <li>OneNote weekly digest</li>
+          <li>Portfolio company AI enablement extension</li>
+        </ul>
+      </div>
+      <div class="phase-detail phase-3 reveal">
+        <div class="phase-detail-label" style="color: var(--coral);">Phase 3</div>
+        <div class="phase-detail-price">Custom Development &amp; Advanced Architecture</div>
+        <div class="phase-detail-duration">Scoped and priced independently after Phase 2</div>
+        <ul>
+          <li>Consolidated portfolio dashboard (HubSpot pipeline + QuickBooks financials + market intel)</li>
+          <li>Unified data consolidation layer across 18 portfolio companies</li>
+          <li>HubSpot pipeline summaries and alerts across portfolio</li>
+          <li>QuickBooks MRR and financial visibility</li>
+          <li>DealCloud integrations and CRM automation</li>
+          <li>Market mapping tool for vertical sourcing</li>
+          <li>Firm connections identifier (LinkedIn Sales Navigator)</li>
+          <li>Architecture decisions timed to platform maturity</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Horizontal Timeline -->
+    <div class="chart-block reveal" style="margin-top: 24px;">
+      <div class="chart-title">Engagement Timeline</div>
+      <div class="chart-subtitle">Go/No-Go reviews between each phase</div>
+      <div class="timeline-horiz">
+        <div class="timeline-horiz-seg" style="flex: 5; background: var(--green-primary);">Phase 1</div>
+        <div class="timeline-horiz-gate"></div>
+        <div class="timeline-horiz-seg" style="flex: 8; background: var(--amber);">Phase 2</div>
+        <div class="timeline-horiz-gate"></div>
+        <div class="timeline-horiz-seg" style="flex: 10; background: transparent; border: 2px dashed var(--coral); color: var(--coral);">Phase 3 (TBD)</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-top: 6px; font-size: 0.68rem; color: var(--text-tertiary);">
+        <span>Week 1</span>
+        <span>Week 6</span>
+        <span>Week 16</span>
+        <span>Scoped after Phase 2</span>
+      </div>
+    </div>
+
+    <!-- Investment Table -->
+    <div class="chart-block reveal" style="margin-top: 24px;">
+      <div class="chart-title">Investment Summary</div>
+      <div class="chart-subtitle">All fees are fixed-price per phase</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Duration</th>
+            <th>Investment</th>
+            <th>Commitment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Phase 1: Foundation</strong></td>
+            <td>4-6 weeks</td>
+            <td class="highlight">$25,000-$35,000</td>
+            <td><span class="badge badge-green-accent">Upfront</span></td>
+          </tr>
+          <tr>
+            <td><strong>Phase 2: Enablement</strong></td>
+            <td>8-10 weeks</td>
+            <td>$55,000-$75,000</td>
+            <td><span class="badge badge-amber">After Go/No-Go</span></td>
+          </tr>
+          <tr>
+            <td><strong>Phase 3: Custom Dev</strong></td>
+            <td>TBD</td>
+            <td>Scoped independently after Phase 2</td>
+            <td><span class="badge badge-amber">After Go/No-Go</span></td>
+          </tr>
+          <tr style="border-top: 2px solid var(--border);">
+            <td><strong>Phases 1-2 Total</strong></td>
+            <td><strong>12-16 weeks</strong></td>
+            <td><strong class="highlight">$80,000-$110,000</strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- M365 Copilot Callout -->
+    <div class="callout amber-callout reveal" style="margin-top: 24px;">
+      <div class="callout-title">A Note on M365 Copilot</div>
+      <div class="callout-text">Since GGP runs on the Microsoft stack, a meaningful portion of the day-to-day productivity gains your team is looking for -- email triage, meeting summaries, single-document analysis -- are available natively through M365 Copilot. We would make sure those capabilities are fully activated and your team knows how to use them, but we would not charge custom consulting rates for things Microsoft already ships. Where the real value of this engagement lives is in the work M365 Copilot cannot do: reasoning across your full portfolio, connecting systems like DealCloud, HubSpot, and QuickBooks into unified workflows, and building the AI operating model that makes a 15-person team perform like a much larger one.</div>
+    </div>
+
+    <!-- Why Phase 3 Comes Last -->
+    <div class="callout reveal" style="margin-top: 16px;">
+      <div class="callout-title">Why Phase 3 Comes Last</div>
+      <div class="callout-text">The AI platforms -- Anthropic, OpenAI, Google -- are shipping new native connectors and capabilities on a near-weekly basis. Every week of custom development we defer has a real chance of being replaced by out-of-the-box functionality that is more reliable and more maintainable. Phases 1 and 2 give us time to evaluate the integration landscape and lock in the right architecture before committing investment to custom work that could become redundant.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== NEXT STEPS ========== -->
+<section class="section" id="next">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-label">06 -- Next Steps</div>
+      <h2>Ready When You Are</h2>
+      <p class="section-lead">Four steps to kick off. Phase 1 can begin within one week of signing.</p>
+    </div>
+
+    <div class="next-grid">
+      <div class="next-card reveal">
+        <div class="next-card-tag">Step 1</div>
+        <h4>Execute NDA</h4>
+        <p>Finalize the mutual NDA currently in discussion. Required before system access and kickoff.</p>
+      </div>
+      <div class="next-card reveal">
+        <div class="next-card-tag">Step 2</div>
+        <h4>Review Proposal</h4>
+        <p>Andrew and James review this document. We will walk through any section in detail on a call.</p>
+      </div>
+      <div class="next-card reveal">
+        <div class="next-card-tag">Step 3</div>
+        <h4>Confirm Scope</h4>
+        <p>30-minute call to finalize Phase 1 priorities, adjust sequencing if needed, and set the start date.</p>
+      </div>
+      <div class="next-card reveal">
+        <div class="next-card-tag">Step 4</div>
+        <h4>Schedule Kickoff</h4>
+        <p>Phase 1 kickoff session. Discovery interviews, system access review, and training calendar set.</p>
+      </div>
+    </div>
+
+    <div class="callout reveal" style="margin-top: 24px;">
+      <div class="callout-title">Suggested Next Step</div>
+      <div class="callout-text">A short call early next week to walk through questions, align on priorities, and confirm Phase 1 scope. Happy to come to the Westlake office or do Zoom -- whatever works best. Would be great to have James there as well so we can align on scope and timing together.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-logo">YELIN.IO</div>
+  <div class="footer-text">
+    Prepared by Mike Duncan<br>
+    April 2026 &middot; Confidential &middot; Greenridge Growth Partners
+  </div>
+</footer>
+
+<!-- ========== SCROLL REVEAL + THEME TOGGLE ========== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(function(el) { observer.observe(el); });
+
+  var html = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  var icon = document.getElementById('themeIcon');
+  var saved = localStorage.getItem('ggp-brief-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    icon.textContent = '\u2600';
+    btn.lastChild.textContent = ' Light';
+  }
+  btn.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      icon.textContent = '\u263E';
+      btn.lastChild.textContent = ' Dark';
+      localStorage.setItem('ggp-brief-theme', 'light');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      icon.textContent = '\u2600';
+      btn.lastChild.textContent = ' Light';
+      localStorage.setItem('ggp-brief-theme', 'dark');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
