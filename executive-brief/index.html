@@ -82,7 +82,7 @@
 }
 [data-theme="dark"] .compare-bar-fill span { color: #fff; }
 [data-theme="dark"] .compare-bar-track { background: rgba(255,255,255,0.12); }
-[data-theme="dark"] .data-table th { border-bottom-color: rgba(255,255,255,0.15); }
+[data-theme="dark"] .data-table th { border-bottom-color: rgba(255,255,255,0.15); color: var(--text-secondary); }
 [data-theme="dark"] .data-table td { border-bottom-color: rgba(255,255,255,0.06); }
 [data-theme="dark"] svg text { fill: var(--text); }
 [data-theme="dark"] svg text[fill="#999"] { fill: var(--text-tertiary); }
@@ -92,7 +92,6 @@
 [data-theme="dark"] .callout.amber-callout { background: var(--amber-wash); border-left-color: var(--amber); }
 [data-theme="dark"] .callout.coral-callout { background: var(--coral-wash); border-left-color: var(--coral); }
 [data-theme="dark"] .phase-detail ul { color: var(--text-secondary); }
-[data-theme="dark"] .data-table th { color: var(--text-secondary); }
 [data-theme="dark"] .chart-subtitle { color: var(--text-secondary); }
 
 /* ---- Theme Toggle ---- */
@@ -814,7 +813,7 @@ body {
   gap: 10px;
   padding: 7px 0;
   text-decoration: none;
-  transition: all 0.2s var(--ease);
+  transition: opacity 0.2s var(--ease), color 0.2s var(--ease);
 }
 .side-nav-dot {
   width: 6px;
@@ -1285,7 +1284,7 @@ body {
       </div>
     </div>
     <!-- Total Bar -->
-    <div style="margin-top: 16px; background: var(--navy); border-radius: 12px; padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; color: #fff;">
+    <div style="margin-top: 16px; background: #1A1A2E; border-radius: 12px; padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; color: #fff;">
       <div style="font-size: 0.85rem; font-weight: 600; opacity: 0.8;">Phases 1-2 Total</div>
       <div style="font-family: var(--serif); font-size: 2rem;">$80,000 - $110,000</div>
     </div>
@@ -1464,27 +1463,27 @@ body {
 <nav class="mobile-nav" id="mobileNav">
   <ul class="mobile-nav-links">
     <li><a href="#summary" data-section="summary">
-      <svg viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
       Summary
     </a></li>
     <li><a href="#sourcing" data-section="sourcing">
-      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       Sourcing
     </a></li>
     <li><a href="#deal" data-section="deal">
-      <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       Deal
     </a></li>
     <li><a href="#portfolio" data-section="portfolio">
-      <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 3l-4 4-4-4"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 3l-4 4-4-4"/></svg>
       Portfolio
     </a></li>
     <li><a href="#investment" data-section="investment">
-      <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
       Invest
     </a></li>
     <li><a href="#next" data-section="next">
-      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       Next
     </a></li>
   </ul>
@@ -1528,62 +1527,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Side nav scroll spy
+  // Scroll spy -- shared section detection for side nav + mobile nav
   var sectionIds = ['summary', 'sourcing', 'deal', 'portfolio', 'investment', 'next'];
+  var sectionEls = sectionIds.map(function(id) { return document.getElementById(id); });
   var sideLinks = document.querySelectorAll('.side-nav-item');
   var sideNav = document.getElementById('sideNav');
-  var topNav = document.querySelector('.nav');
-  function updateActiveSection() {
-    var scrollY = window.scrollY + 80;
-    var currentId = sectionIds[0];
-    for (var i = sectionIds.length - 1; i >= 0; i--) {
-      var el = document.getElementById(sectionIds[i]);
-      if (el && el.offsetTop <= scrollY) { currentId = sectionIds[i]; break; }
-    }
-    var href = '#' + currentId;
-    sideLinks.forEach(function(link) {
-      link.classList.toggle('active', link.getAttribute('href') === href);
-    });
-    if (sideNav) {
-      var heroSection = document.querySelector('.hero');
-      var pastHero = heroSection ? window.scrollY > heroSection.offsetHeight : window.scrollY > 300;
-      sideNav.classList.toggle('visible', pastHero);
-    }
-  }
-  // Mobile nav scroll spy + hide on scroll down
+  var heroEl = document.querySelector('.hero');
   var mobileNav = document.getElementById('mobileNav');
   var mobileLinks = document.querySelectorAll('.mobile-nav-links a');
   var lastScrollY = 0;
   var scrollThreshold = 10;
+  var ticking = false;
 
-  function updateMobileNav() {
-    var scrollY = window.scrollY + 80;
-    var currentId = sectionIds[0];
-    for (var i = sectionIds.length - 1; i >= 0; i--) {
-      var el = document.getElementById(sectionIds[i]);
-      if (el && el.offsetTop <= scrollY) { currentId = sectionIds[i]; break; }
-    }
-    mobileLinks.forEach(function(link) {
-      link.classList.toggle('active', link.getAttribute('data-section') === currentId);
-    });
-    // Hide on scroll down, show on scroll up
-    if (mobileNav) {
-      var diff = window.scrollY - lastScrollY;
-      if (diff > scrollThreshold) {
-        mobileNav.classList.add('hidden');
-      } else if (diff < -scrollThreshold) {
-        mobileNav.classList.remove('hidden');
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function() {
+      var scrollY = window.scrollY + 80;
+      var currentId = sectionIds[0];
+      for (var i = sectionEls.length - 1; i >= 0; i--) {
+        if (sectionEls[i] && sectionEls[i].offsetTop <= scrollY) { currentId = sectionIds[i]; break; }
       }
-    }
-    lastScrollY = window.scrollY;
+      // Side nav
+      var href = '#' + currentId;
+      sideLinks.forEach(function(link) {
+        link.classList.toggle('active', link.getAttribute('href') === href);
+      });
+      if (sideNav) {
+        sideNav.classList.toggle('visible', heroEl ? window.scrollY > heroEl.offsetHeight : window.scrollY > 300);
+      }
+      // Mobile nav
+      mobileLinks.forEach(function(link) {
+        link.classList.toggle('active', link.getAttribute('data-section') === currentId);
+      });
+      if (mobileNav) {
+        var diff = window.scrollY - lastScrollY;
+        if (diff > scrollThreshold) mobileNav.classList.add('hidden');
+        else if (diff < -scrollThreshold) mobileNav.classList.remove('hidden');
+      }
+      lastScrollY = window.scrollY;
+      ticking = false;
+    });
   }
 
-  window.addEventListener('scroll', function() {
-    updateActiveSection();
-    updateMobileNav();
-  }, { passive: true });
-  updateActiveSection();
-  updateMobileNav();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 });
 </script>
 
