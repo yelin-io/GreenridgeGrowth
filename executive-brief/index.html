@@ -548,6 +548,19 @@ body {
   color: var(--text-secondary);
   line-height: 1.6;
 }
+.next-card.completed {
+  background: var(--green-wash);
+  border-left: 3px solid var(--green-primary);
+}
+.next-card.completed .next-card-tag {
+  color: var(--green-primary);
+}
+.next-card.completed h4 {
+  color: var(--green-primary);
+}
+.next-card.completed p {
+  opacity: 0.8;
+}
 
 /* ---- Footer ---- */
 .footer {
@@ -1431,10 +1444,10 @@ body {
     </div>
 
     <div class="next-grid">
-      <div class="next-card reveal">
-        <div class="next-card-tag">Step 1</div>
-        <h4>Execute NDA</h4>
-        <p>Finalize the mutual NDA currently in discussion. Required before system access and kickoff.</p>
+      <div class="next-card completed reveal">
+        <div class="next-card-tag">Complete</div>
+        <h4>NDA Signed &#10003;</h4>
+        <p>Mutual NDA executed. System access and kickoff cleared to proceed.</p>
       </div>
       <div class="next-card reveal">
         <div class="next-card-tag">Step 2</div>
