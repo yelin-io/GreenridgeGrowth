@@ -626,6 +626,22 @@ body {
   padding-left: 16px;
 }
 
+/* ---- Team Bio Cards ---- */
+.bio-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
+.bio-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  transition: box-shadow 0.3s var(--ease), transform 0.2s var(--ease);
+}
+.bio-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.05); transform: translateY(-2px); }
+.bio-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.bio-name { font-family: var(--serif); font-size: 1.2rem; color: var(--navy); }
+.bio-role { font-size: 0.82rem; font-weight: 600; color: var(--green-primary); }
+.bio-org { font-size: 0.75rem; color: var(--text-tertiary); }
+.bio-text { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+
 /* ---- Confidential Badge ---- */
 .nav-badge.confidential {
   color: var(--red);
@@ -793,6 +809,9 @@ body {
 
   /* Footer extra padding */
   footer { padding-bottom: 80px; }
+
+  /* Bio cards */
+  .bio-card { padding: 20px; }
 }
 
 /* ---- Print ---- */
@@ -811,6 +830,8 @@ body {
   .roi-section { break-inside: avoid; }
   .section + .section { border-top: 1px solid #ddd; }
   svg text { fill: #1A1A2E !important; }
+  .bio-card { break-inside: avoid; }
+  .bio-card:hover { box-shadow: none; transform: none; }
 }
 
 /* ---- Side Nav (scroll spy) ---- */
@@ -889,6 +910,7 @@ body {
     <li><a href="#deal">Deal Exec</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#investment">Investment</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#next">Next</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:10px;">
@@ -906,6 +928,7 @@ body {
   <a href="#deal" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Deal Exec</span></a>
   <a href="#portfolio" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Portfolio</span></a>
   <a href="#investment" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Investment</span></a>
+  <a href="#team" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Team</span></a>
   <a href="#next" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Next</span></a>
 </div>
 
@@ -1434,11 +1457,55 @@ body {
   </div>
 </section>
 
+<!-- ========== TEAM ========== -->
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-label">06 -- Team</div>
+      <h2>A Team Built for PE</h2>
+      <p class="section-lead">Proven PE, AI Engineering, and Enterprise Transformation expertise tailored to GGP.</p>
+    </div>
+
+    <div class="bio-grid">
+      <div class="bio-card reveal">
+        <div class="bio-header">
+          <div>
+            <div class="bio-name">Henry Yelin</div>
+            <div class="bio-role">PE &amp; AI Strategy Advisor</div>
+            <div class="bio-org">Yelin.io</div>
+          </div>
+        </div>
+        <div class="bio-text">Henry brings a rare combination of PE operating model expertise and hands-on engineering technology leadership. As Director of Technology &amp; Diligence at Vista Equity Partners, he worked on the Product &amp; Technology Value Creation team, improving engineering operations and infrastructure across Vista's 80+ portfolio companies. This is directly relevant to GGP: Henry has operated the playbook that PE firms use to drive measurable operational efficiency across their portfolios, including the AI tooling adoption frameworks and benchmarking that investors and operating partners expect to see. Henry holds a Master's in Information Systems Management from Carnegie Mellon and a B.S. in Theoretical Mathematics.</div>
+      </div>
+      <div class="bio-card reveal">
+        <div class="bio-header">
+          <div>
+            <div class="bio-name">Russell Beggs</div>
+            <div class="bio-role">Engagement &amp; Technology Lead</div>
+            <div class="bio-org">Yelin.io</div>
+          </div>
+        </div>
+        <div class="bio-text">Russell brings direct experience leading the kind of operational transformation that PE portfolio companies require. As SVP Engineering at ESO (backed by Vista Equity Partners), he led a 300+ person engineering org across North America and Europe. He led the rollout of DORA metrics and GitHub Copilot across ESO's engineering teams, achieving a measurable 22% YoY velocity increase -- the kind of evidence-based AI adoption that creates real portfolio value. With 7 years at Deloitte Digital delivering enterprise-scale transformations, Russell has deep experience in the operational measurement and tooling adoption that PE operating partners need across their portfolios. Russell holds a Masters of Engineering in Computer Science from Queen's University Belfast.</div>
+      </div>
+      <div class="bio-card reveal">
+        <div class="bio-header">
+          <div>
+            <div class="bio-name">Mike Duncan</div>
+            <div class="bio-role">AI Engineering Specialist</div>
+            <div class="bio-org">Yelin.io</div>
+          </div>
+        </div>
+        <div class="bio-text">Mike brings a rare combination of enterprise revenue experience and hands-on AI implementation expertise. He has been part of four successful technology exits, including Snowflake's IPO, ServiceNow's IPO, Windsurf's acquisition, and Infocenter's sale to Insight Partners, giving him direct insight into what institutional investors and acquirers expect from a high-performing organization. He joined Windsurf (formerly Codeium), one of the leading AI-assisted coding platforms, in its earliest days, gaining frontline experience in how AI development tools create measurable productivity gains and where enterprise adoption breaks down. This is directly relevant to GGP: Mike has trained teams globally on AI-first workflows, helping them build effective practices that translate into measurable operational improvement.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== NEXT STEPS ========== -->
 <section class="section" id="next">
   <div class="wrap">
     <div class="reveal">
-      <div class="section-label">06 -- Next Steps</div>
+      <div class="section-label">07 -- Next Steps</div>
       <h2>Ready When You Are</h2>
       <p class="section-lead">Four steps to kick off. Phase 1 can begin within one week of signing.</p>
     </div>
@@ -1505,6 +1572,10 @@ body {
       <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
       Invest
     </a></li>
+    <li><a href="#team" data-section="team">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      Team
+    </a></li>
     <li><a href="#next" data-section="next">
       <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       Next
@@ -1551,7 +1622,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Scroll spy -- shared section detection for side nav + mobile nav
-  var sectionIds = ['summary', 'sourcing', 'deal', 'portfolio', 'investment', 'next'];
+  var sectionIds = ['summary', 'sourcing', 'deal', 'portfolio', 'investment', 'team', 'next'];
   var sectionEls = sectionIds.map(function(id) { return document.getElementById(id); });
   var sideLinks = document.querySelectorAll('.side-nav-item');
   var sideNav = document.getElementById('sideNav');
