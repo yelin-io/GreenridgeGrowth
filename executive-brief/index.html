@@ -824,6 +824,20 @@ body {
   /* Pricing hero cards -> stack */
   .pricing-hero-grid { grid-template-columns: 1fr !important; }
 
+  /* Mobile: loosen fixed min-widths for auto-fit grids so cards go full-width */
+  .chart-block [style*="minmax(260px"],
+  .chart-block [style*="minmax(280px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Mobile: tighter kpi row, nav font */
+  .kpi-row { gap: 10px; }
+  .kpi-value { font-size: 2.2rem !important; }
+  .hero h1 { font-size: 2rem !important; line-height: 1.2; }
+  .hero-sub { font-size: 0.95rem; }
+  .section-label { font-size: 0.62rem; }
+  .callout { padding: 16px 18px; margin-top: 20px; }
+
   /* Phase details */
   .phase-detail { padding: 18px; }
   .phase-detail-price { font-size: 1.2rem; }
@@ -1088,7 +1102,7 @@ body {
     </div>
 
     <!-- Two Track Cards -->
-    <div class="pricing-hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px;">
+    <div class="pricing-hero-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 40px;">
       <div class="chart-block reveal" style="border: 2px solid var(--green-primary); padding: 28px 24px;">
         <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 12px;">Track 1 -- Foundational Training</div>
         <div style="font-family: var(--serif); font-size: 1.4rem; color: var(--green-deep); line-height: 1.25; margin-bottom: 12px;">Team Enablement Across the Full 15-Person Firm</div>
@@ -1105,18 +1119,18 @@ body {
     <div class="chart-block reveal" style="margin-top: 32px;">
       <div class="chart-title">Three Phase 1 Deliverables</div>
       <div class="chart-subtitle">Visible outputs delivered to GGP during Phase 1</div>
-      <div class="deliverable-tiles" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 20px;">
-        <div style="padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+      <div class="deliverable-tiles" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 20px;">
+        <div style="padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 10px;">Week 3 &middot; Deliverable 1</div>
           <div style="font-family: var(--serif); font-size: 1.15rem; color: var(--green-deep); line-height: 1.3; margin-bottom: 10px;">GGP Phase 1 Discovery & Training Plan</div>
           <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Interactive HTML plus PDF delivered Week 3. Our homework and your training blueprint in one document: what we heard in discovery, a Cowork connectors playbook, security + governance guidelines, a public PE AI signals digest, and the tailored curriculum for the seven half-day sessions that follow.</div>
         </div>
-        <div style="padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+        <div style="padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-primary); margin-bottom: 10px;">Weeks 3-5 &middot; Deliverable 2</div>
           <div style="font-family: var(--serif); font-size: 1.15rem; color: var(--green-primary); line-height: 1.3; margin-bottom: 10px;">On-Site Foundational Training</div>
           <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Half-day sessions shaped for your team's intermediate-to-advanced Claude fluency: a kickoff, three whole-team sessions (compressed 4Ds + a dedicated Cowork deep-dive), two role cohorts (sourcing + portfolio ops), and a Closing Applied Workshop. Seven half-days total across Weeks 3-5, ~2-3 per week so the team can fit it around their work.</div>
         </div>
-        <div style="padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+        <div style="padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 10px;">Weeks 5-6 &middot; Deliverable 3</div>
           <div style="font-family: var(--serif); font-size: 1.15rem; color: var(--amber-dark); line-height: 1.3; margin-bottom: 10px;">Phase 2 SOW Draft</div>
           <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Two to three priced Phase 2 options with timeline and scope rationale, grounded in training outcomes and Track 2 discovery findings. Delivered in Word to you and James by end of Week 6.</div>
@@ -1128,28 +1142,28 @@ body {
     <div class="chart-block reveal" style="margin-top: 24px;">
       <div class="chart-title">Inside the Discovery & Training Plan</div>
       <div class="chart-subtitle">Our homework and your training blueprint in one document. Five sections, delivered Week 3.</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px;">
-        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 18px;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 6px;">Section 1</div>
           <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--green-deep); line-height: 1.3; margin-bottom: 10px;">Discovery Findings</div>
           <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">What we heard in five to six interviews with you plus reps from sourcing, portfolio ops, and deal execution. Workflow reality, stuck points, current tooling, what would move the needle. Grounds everything else in the Plan in what's actually happening at GGP today.</div>
         </div>
-        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 6px;">Section 2</div>
           <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--green-deep); line-height: 1.3; margin-bottom: 10px;">Cowork Connectors &amp; Integration Playbook</div>
           <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Out-of-the-box connectors and known MCPs for GGP's stack -- DealCloud, HubSpot, M365, OneNote, Salesloft, Clay. Setup instructions your team can execute without writing code. <strong>Anything that requires custom development is Phase 2 territory.</strong> Phase 1 stays on Cowork + Claude core functionality. GGP walks away able to manage and extend their own connectors.</div>
         </div>
-        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); margin-bottom: 6px;">Section 3</div>
           <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--navy); line-height: 1.3; margin-bottom: 10px;">Security + Governance Guidelines</div>
           <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Cowork usage model mapped to GGP's risk posture (MNPI, portfolio financials, live deal data). Skill publishing controls and review workflow. Anthropic Trust Center findings (SOC 2, data retention, residency) packaged for partner-level review. GGP-specific Acceptable Use Guidelines derived from Anthropic's Usage Policies.</div>
         </div>
-        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 6px;">Section 4</div>
           <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--amber-dark); line-height: 1.3; margin-bottom: 10px;">Public AI Adoption Signals in PE</div>
           <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Curated digest of publicly disclosed AI initiatives at comparable PE firms -- Blackstone, KKR, Vista, Apollo announcements; Anthropic, OpenAI, and Google customer case studies; BVP, McKinsey, and Axios Pro Rata coverage. Synthesis of public sources for context -- not proprietary access.</div>
         </div>
-        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff; grid-column: 1 / -1;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--white); grid-column: 1 / -1;">
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); margin-bottom: 6px;">Section 5 &middot; The Training Blueprint</div>
           <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--coral); line-height: 1.3; margin-bottom: 10px;">Tailored Training Curriculum</div>
           <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">The actual content for the seven half-day sessions -- topics, exercises, prompts, examples -- built from the Discovery Findings (Section 1) and Anthropic's AI Fluency 4Ds framework. Compressed where your team is already fluent; deeper on Cowork where the value is newest. Not a generic curriculum. Every example, demo, and exercise reflects GGP's own workflows as surfaced in the interviews.</div>
@@ -1172,7 +1186,7 @@ body {
       <div style="height: 2px; background: linear-gradient(to right, var(--green-primary), var(--green-deep), var(--amber)); margin: 26px 0 22px 0; border-radius: 2px;"></div>
 
       <!-- 3 columns -->
-      <div class="timeline-columns" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+      <div class="timeline-columns" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
 
         <!-- Column 1: Weeks 1-2 Research & Prep -->
         <div style="padding: 0 4px;">
@@ -1273,8 +1287,8 @@ body {
     <div class="chart-block reveal" style="margin-top: 24px;">
       <div class="chart-title">Phase 1 Investment</div>
       <div class="chart-subtitle">Fixed fee. Travel included. Phase 2 scoped and priced in Phase 1.</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px;">
-        <div style="padding: 26px; border: 2px solid var(--green-primary); border-radius: 10px; text-align: center; background: #fff;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 18px;">
+        <div style="padding: 26px; border: 2px solid var(--green-primary); border-radius: 10px; text-align: center; background: var(--white);">
           <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 10px;">Phase 1 &middot; Fixed Fee</div>
           <div style="font-family: var(--serif); font-size: 2.8rem; color: var(--green-deep); line-height: 1; margin-bottom: 6px;">$22,000</div>
           <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">Five to six weeks</div>
@@ -1402,18 +1416,18 @@ body {
     <div class="chart-block reveal" style="margin-top: 16px;">
       <div class="chart-title">Three Functional Areas in Scope</div>
       <div class="chart-subtitle">Where Phase 1 research validates and Phase 2 scoping focuses</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 18px;">
-        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 18px;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-family: var(--serif); font-size: 1.05rem; color: var(--green-deep); margin-bottom: 8px;">Sourcing</div>
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-primary); margin-bottom: 10px;">Most Developed</div>
           <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">6,500 active prospects, DealCloud-centric. Claude already in daily use for research, outreach, CRM. Candidate quick wins surface in Phase 2 scoping.</div>
         </div>
-        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-family: var(--serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 8px;">Deal Execution</div>
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 10px;">Early Stage</div>
           <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Least-developed area. QuickBooks integration and intelligent data-room search identified. Natural Phase 2 focus once foundations are in place.</div>
         </div>
-        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--white);">
           <div style="font-family: var(--serif); font-size: 1.05rem; color: var(--amber-dark); margin-bottom: 8px;">Portfolio Ops</div>
           <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 10px;">Well Developed</div>
           <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">HubSpot pipelines, QuickBooks financials, competitive intel scattered today. Consolidated dashboard across the 8 active portfolio companies is a Phase 2 candidate.</div>
