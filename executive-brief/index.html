@@ -714,9 +714,14 @@ body {
 
 /* ---- Confidential Badge ---- */
 .nav-badge.confidential {
-  color: var(--red);
-  border-color: rgba(224,82,82,0.3);
+  /* Darker red to hit WCAG AA on red-wash (was #E05252 / 3.43:1, now #A83030 / ~5.3:1) */
+  color: #A83030;
+  border-color: rgba(224,82,82,0.35);
   background: var(--red-wash);
+}
+[data-theme="dark"] .nav-badge.confidential {
+  color: #F09090;
+  border-color: rgba(224,82,82,0.4);
 }
 
 /* ---- Horizontal Timeline ---- */
