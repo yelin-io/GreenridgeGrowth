@@ -783,6 +783,7 @@ body {
 
   /* Timeline -> vertical stack with full-width bars */
   .timeline-horiz { flex-direction: column; height: auto; border-radius: 8px; gap: 6px; }
+  .timeline-columns { grid-template-columns: 1fr !important; }
   .timeline-week-labels { display: none; }
   .timeline-horiz-seg {
     width: 100% !important;
@@ -906,12 +907,10 @@ body {
   <div class="nav-logo">YELIN.IO</div>
   <ul class="nav-links">
     <li><a href="#summary">Summary</a></li>
-    <li><a href="#sourcing">Sourcing</a></li>
-    <li><a href="#deal">Deal Exec</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#investment">Investment</a></li>
+    <li><a href="#investment">Phase 1</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#next">Next</a></li>
+    <li><a href="#context">Context</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:10px;">
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -924,23 +923,21 @@ body {
 <!-- ========== SIDE NAV (scroll spy) ========== -->
 <div class="side-nav" id="sideNav">
   <a href="#summary" class="side-nav-item active"><div class="side-nav-dot"></div><span class="side-nav-label">Summary</span></a>
-  <a href="#sourcing" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Sourcing</span></a>
-  <a href="#deal" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Deal Exec</span></a>
-  <a href="#portfolio" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Portfolio</span></a>
-  <a href="#investment" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Investment</span></a>
+  <a href="#investment" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Phase 1</span></a>
   <a href="#team" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Team</span></a>
   <a href="#next" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Next</span></a>
+  <a href="#context" class="side-nav-item"><div class="side-nav-dot"></div><span class="side-nav-label">Context</span></a>
 </div>
 
 <!-- ========== HERO ========== -->
 <section class="hero">
   <div class="hero-inner reveal">
-    <div class="hero-eyebrow">AI Consulting Scope of Work</div>
+    <div class="hero-eyebrow">AI Consulting Scope of Work &middot; Refreshed April 14, 2026</div>
     <h1>An AI Operating Model<br>for Greenridge Growth Partners</h1>
-    <div class="hero-sub">A phased engagement spanning sourcing, deal execution, and portfolio operations -- from individual tool adoption to a firm-wide AI strategy.</div>
+    <div class="hero-sub">A five-to-six-week, two-track Phase 1: foundational AI training for your full 15-person team, paired with collaborative discovery to scope Phase 2.</div>
     <div class="hero-client">Prepared for Andrew Bell, VP Value Creation</div>
     <div class="hero-meta">
-      <span>April 2026</span>
+      <span>Updated April 14, 2026</span>
       <span>&middot;</span>
       <span>Yelin.io</span>
       <span>&middot;</span>
@@ -955,7 +952,7 @@ body {
     <div class="reveal">
       <div class="section-label">01 -- Executive Summary</div>
       <h2>Optimize Today.<br>Build for Tomorrow.</h2>
-      <p class="section-lead">Following our discovery sessions in February and March 2026, Yelin.io proposes a phased AI consulting engagement organized around GGP's three core departments: sourcing, deal execution, and portfolio operations. The goal is to optimize your 7 active use case areas for immediate impact, train the full team on AI-first workflows, and deploy targeted AI tools that address the highest-value opportunities identified in your Strategy Brief.</p>
+      <p class="section-lead">Based on discovery sessions from February through April 2026 -- culminating in your April 10 direction to restructure Phase 1 -- Yelin.io proposes a five-to-six-week, two-track Phase 1: foundational AI training for the full 15-person team, paired with collaborative discovery to scope Phase 2. The three department snapshots that follow (sourcing, deal execution, portfolio operations) and GGP's seven active use cases represent what we have learned to date and remain inputs to Phase 1 research and Phase 2 scoping.</p>
     </div>
 
     <div class="kpi-row">
@@ -1033,426 +1030,221 @@ body {
   </div>
 </section>
 
-<!-- ========== SOURCING ========== -->
-<section class="section" id="sourcing">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="section-label">02 -- Sourcing</div>
-      <h2>From Static Lists to<br>Dynamic Intelligence</h2>
-      <p class="section-lead">Sourcing is GGP's most-developed AI function -- and the one with the highest immediate upside. Your team already uses AI daily for research, outreach, and CRM updates. The opportunity is to connect these workflows into a unified intelligence layer.</p>
-    </div>
-
-    <!-- Active Sourcing Workflows -->
-    <div class="chart-block reveal">
-      <div class="chart-title">Active Sourcing Workflows</div>
-      <div class="chart-subtitle">From GGP's AI Best Practices Guide (March 2026)</div>
-      <div class="status-grid">
-        <div class="status-item"><div class="status-dot green-accent"></div><strong>Industry &amp; Company Research</strong> Most-used workflow across the sourcing team</div>
-        <div class="status-item"><div class="status-dot green-accent"></div><strong>Cold Outreach Closing Writer</strong> Custom tool generating portfolio-relevant closing sentences</div>
-        <div class="status-item"><div class="status-dot green-accent"></div><strong>CRM Updates from Email</strong> Reads Outlook threads, drafts DealCloud summary notes</div>
-      </div>
-    </div>
-
-    <!-- Pain Points -->
-    <div class="chart-block reveal">
-      <div class="chart-title">Where the Friction Lives</div>
-      <div class="chart-subtitle">Key gaps identified in GGP's AI Strategy Brief</div>
-      <div style="margin-top: 16px;">
-        <div class="compare-row">
-          <div class="compare-label">Lead Prioritization</div>
-          <div class="compare-bar-track">
-            <div class="compare-bar-fill" style="width: 20%; min-width: 50px; background: var(--coral);"><span>Static</span></div>
-          </div>
-          <div class="compare-badge" style="background: var(--coral-wash); color: var(--coral);">Not Event-Driven</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Information Access</div>
-          <div class="compare-bar-track">
-            <div class="compare-bar-fill" style="width: 30%; min-width: 50px; background: var(--coral);"><span>Siloed</span></div>
-          </div>
-          <div class="compare-badge" style="background: var(--coral-wash); color: var(--coral);">4+ Systems</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Outreach Quality</div>
-          <div class="compare-bar-track">
-            <div class="compare-bar-fill" style="width: 45%; background: var(--amber);"><span>Inconsistent</span></div>
-          </div>
-          <div class="compare-badge" style="background: var(--amber-wash); color: var(--amber-dark);">Degrades at Volume</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Feedback Loop</div>
-          <div class="compare-bar-track">
-            <div class="compare-bar-fill" style="width: 15%; min-width: 50px; background: var(--coral);"><span>Inconsistent</span></div>
-          </div>
-          <div class="compare-badge" style="background: var(--coral-wash); color: var(--coral);">Breaks Down in Practice</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Quick Wins -->
-    <div class="chart-block reveal">
-      <div class="chart-title">Quick Wins -- Phase 2 Tool Deployment</div>
-      <div class="chart-subtitle">Targeted AI tools deployed after Phase 1 foundation is in place</div>
-      <div class="next-grid" style="margin-top: 16px;">
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--green-primary);">Quick Win</div>
-          <h4>Zoom Transcript to DealCloud</h4>
-          <p>Auto-extract key data points from Zoom call transcripts and draft DealCloud entries. Eliminates manual note transfer.</p>
-        </div>
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--green-primary);">Quick Win</div>
-          <h4>Dynamic Lead Scoring</h4>
-          <p>Event-driven prioritization replacing static lists. Score prospects based on signals, not just position in the pipeline.</p>
-        </div>
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--green-primary);">Quick Win</div>
-          <h4>Messaging Hook Surfacing</h4>
-          <p>AI identifies compelling angles per prospect from portfolio overlap, industry trends, and recent events.</p>
-        </div>
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--green-primary);">Quick Win</div>
-          <h4>News Aggregation</h4>
-          <p>Automated monitoring of prospects, sectors, and portfolio adjacencies. Alerts on leadership changes, funding, and competitive moves.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- North Star -->
-    <div class="callout reveal" style="margin-top: 24px;">
-      <div class="callout-title">The North Star</div>
-      <div class="callout-text">"I have an hour -- what are the 20 most impactful things I can do at top of funnel right now?" That question should have an answer every morning. The AI-enabled sourcing vision connects DealCloud, Outlook, OneNote, LinkedIn, and call transcripts into a single intelligence layer that drives prioritized action.</div>
-    </div>
-
-    <!-- Key Data -->
-    <div class="kpi-row reveal" style="grid-template-columns: repeat(3, 1fr); margin-top: 24px;">
-      <div class="kpi-card">
-        <div class="kpi-value green-primary">6,500</div>
-        <div class="kpi-label">Active Prospects</div>
-        <div class="kpi-sub">In DealCloud pipeline</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value amber">5+</div>
-        <div class="kpi-label">Data Systems</div>
-        <div class="kpi-sub">DealCloud, Outlook, OneNote, LinkedIn, Salesloft</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value green-accent">1</div>
-        <div class="kpi-label">Custom Tool Built</div>
-        <div class="kpi-sub">Closing sentence writer</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== DEAL EXECUTION ========== -->
-<section class="section" id="deal">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="section-label amber">03 -- Deal Execution</div>
-      <h2>Strategic Opportunity,<br>Not a Gap</h2>
-      <p class="section-lead">Deal execution AI is at its earliest stages across the PE industry. With no imminent active transaction, GGP has the advantage of building deliberately rather than reactively.</p>
-    </div>
-
-    <!-- Pain Points (3 only -- sourced from Strategy Brief) -->
-    <div class="chart-block reveal">
-      <div class="chart-title">Known Friction Points</div>
-      <div class="chart-subtitle">Areas where AI can accelerate deal evaluation</div>
-      <div class="status-grid">
-        <div class="status-item"><div class="status-dot amber"></div><strong>Time-to-quality on analysis</strong> Manual research slows deal evaluation</div>
-        <div class="status-item"><div class="status-dot amber"></div><strong>Operating model construction</strong> Repetitive framework building across deals</div>
-        <div class="status-item"><div class="status-dot amber"></div><strong>Data room evaluation</strong> Volume of documents exceeds review capacity</div>
-      </div>
-    </div>
-
-    <!-- Emerging Opportunities -->
-    <div class="chart-block reveal">
-      <div class="chart-title">Emerging Opportunities</div>
-      <div class="chart-subtitle">Capabilities to evaluate in Phase 3 custom development</div>
-      <div class="next-grid" style="margin-top: 16px;">
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--coral);">Phase 3</div>
-          <h4>QuickBooks via Strongbox</h4>
-          <p>Automated financial data extraction for diligence. Structured output from unstructured accounting data across portfolio companies.</p>
-        </div>
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--coral);">Phase 3</div>
-          <h4>Intelligent Data Room Search</h4>
-          <p>AI-assisted document search and extraction across data rooms. Surface key terms, risks, and comparable clauses in minutes instead of days.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="callout amber-callout reveal" style="margin-top: 24px;">
-      <div class="callout-title">Strategic Framing</div>
-      <div class="callout-text">Deal execution will be the last department to fully adopt AI -- and that is the right sequencing. The near-term focus is building the sourcing and portfolio intelligence that feeds into deals. Phase 2 scopes this area based on what the team discovers in Phase 1, when real workflows and priorities emerge from daily usage.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== PORTFOLIO MONITORING & OPERATIONS ========== -->
-<section class="section" id="portfolio">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="section-label coral">04 -- Portfolio Monitoring &amp; Operations</div>
-      <h2>18 Companies.<br>A Clear Path Forward.</h2>
-      <p class="section-lead">The portfolio dashboard is the long-term vision. The path starts with AI-native tools that reduce meeting prep, surface institutional knowledge, and lay the groundwork for the consolidated data view your team envisions.</p>
-    </div>
-
-    <!-- Two Pain Areas -->
-    <div class="chart-block reveal">
-      <div class="chart-title">Two Pain Areas, One Root Cause</div>
-      <div class="chart-subtitle">Data is scattered. Knowledge is in people's heads.</div>
-      <div class="pain-grid">
-        <div>
-          <div style="font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; color: var(--navy);">Monitoring Pain</div>
-          <ul style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.8; padding-left: 16px;">
-            <li>Gathering and normalizing data per company</li>
-            <li>HubSpot, QuickBooks, OneNote, board materials</li>
-            <li>Competitive and market context disconnected</li>
-            <li>No single view across the full portfolio</li>
-          </ul>
-        </div>
-        <div>
-          <div style="font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; color: var(--navy);">Operations Pain</div>
-          <ul style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.8; padding-left: 16px;">
-            <li>Meeting prep takes too long</li>
-            <li>Playbooks and frameworks not codified</li>
-            <li>Cross-pollination between portcos does not happen</li>
-            <li>Institutional knowledge lives in people, not systems</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Dashboard Phases -->
-    <div class="chart-block reveal">
-      <div class="chart-title">Portfolio Dashboard Build</div>
-      <div class="chart-subtitle">Three phases -- each delivers standalone value</div>
-      <div class="timeline" style="margin-top: 16px;">
-        <div class="tl-item">
-          <div class="tl-dot green-accent"></div>
-          <div class="tl-date">Phase A</div>
-          <div class="tl-title">Competitive &amp; Market Intel</div>
-          <div class="tl-desc">Industry data, competitive positioning, and market signals. Automated monitoring for leadership changes, funding events, and regulatory shifts. Unified company profile.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot amber"></div>
-          <div class="tl-date">Phase B</div>
-          <div class="tl-title">HubSpot &amp; Pipeline Data</div>
-          <div class="tl-desc">MRR, bookings, deal pipeline summaries across all 18 portfolio companies. Interactive filtering by company, stage, and date range. Alerts for stale deals and coverage gaps.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot coral"></div>
-          <div class="tl-date">Phase C</div>
-          <div class="tl-title">QuickBooks &amp; Financials</div>
-          <div class="tl-desc">Revenue, expenses, and cash position per company. Period-over-period and budget-vs-actual comparisons. Cross-portfolio financial benchmarks.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Data Sources -->
-    <div class="chart-block reveal">
-      <div class="chart-title">Data Sources per Portfolio Company</div>
-      <div class="chart-subtitle">18 companies, 4 primary systems to connect</div>
-      <div class="status-grid">
-        <div class="status-item"><div class="status-dot green-accent"></div><strong>HubSpot</strong> Primary CRM -- API available</div>
-        <div class="status-item"><div class="status-dot green-accent"></div><strong>QuickBooks</strong> Financials -- Strongbox integration</div>
-        <div class="status-item"><div class="status-dot amber"></div><strong>OneNote</strong> Notes -- M365 API with limitations</div>
-        <div class="status-item"><div class="status-dot amber"></div><strong>DealCloud</strong> Deal tracking -- browser automation path</div>
-      </div>
-    </div>
-
-    <!-- Quick Wins -->
-    <div class="chart-block reveal">
-      <div class="chart-title">Phased Delivery</div>
-      <div class="chart-subtitle">Phase 2 tools address operations pain immediately. Dashboard is Phase 3 custom development.</div>
-      <div class="next-grid" style="margin-top: 16px;">
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--amber);">Phase 2</div>
-          <h4>OneNote Weekly Digest</h4>
-          <p>Auto-generated summary of shared notebook updates across portfolio companies. Key changes surfaced, not buried.</p>
-        </div>
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--amber);">Phase 2</div>
-          <h4>Meeting Prep Agent</h4>
-          <p>Calendar-driven briefings pulling email threads, CRM records, recent news, and prior meeting context. Ready before every call.</p>
-        </div>
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--coral);">Phase 3</div>
-          <h4>Bi-Weekly HubSpot Summary</h4>
-          <p>Automated email digest of pipeline changes per portfolio company. Requires HubSpot API integration across 18 instances.</p>
-        </div>
-        <div class="next-card">
-          <div class="next-card-tag" style="color: var(--coral);">Phase 3</div>
-          <h4>Single-Metric MRR Pull</h4>
-          <p>Current MRR visibility across the portfolio. Requires QuickBooks integration and chart of accounts normalization.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="callout reveal" style="margin-top: 24px;">
-      <div class="callout-title">Per-Company Economics</div>
-      <div class="callout-text">At the midpoint of Phases 1 and 2, the investment represents roughly <strong>$4,400-$6,100 per portfolio company</strong> for AI enablement spanning both the firm and its investments. Each company gets its own Claude Project with tailored context, optimized workflows, and trained points of contact, creating a foundation that scales with the firm.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== ENGAGEMENT APPROACH ========== -->
+<!-- ========== PHASE 1 ENGAGEMENT ========== -->
 <section class="section roi-section" id="investment" style="background: var(--green-wash);">
   <div class="wrap">
     <div class="reveal">
-      <div class="section-label green-accent">05 -- Engagement Approach</div>
-      <h2>Three Phases.<br>One Commitment at a Time.</h2>
-      <p class="section-lead">Fixed-fee per phase with Go/No-Go reviews between each. Phase 1 is the only upfront commitment. Phase 3 is scoped and priced independently after Phase 2.</p>
+      <div class="section-label green-accent">02 -- Phase 1 Engagement</div>
+      <h2>Two Parallel Tracks.<br>One Clear Commitment.</h2>
+      <p class="section-lead">Five-to-six-week Phase 1 restructured per your April 10 framing. Track 1 delivers foundational AI training to the full team -- the bulk of the work. Track 2 produces a Phase 2 scope collaboratively, timed late so the team's training-driven capability gains shape the ideas. Phase 2 is intentionally not pre-specified; it emerges from Phase 1.</p>
     </div>
 
-    <!-- ROI Hero Cards -->
-    <div class="pricing-hero-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 40px;">
-      <div class="chart-block reveal" style="border: 2px solid var(--green-primary); text-align: center; padding: 28px 20px;">
-        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 12px;">Phase 1: Foundation</div>
-        <div style="font-family: var(--serif); font-size: 2.8rem; color: var(--green-deep); line-height: 1; margin-bottom: 4px;">$25-35K</div>
-        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 16px;">4-6 weeks</div>
-        <div style="font-size: 0.75rem; color: var(--text-tertiary); padding-top: 12px; border-top: 1px solid var(--border);">Training, optimization, Claude migration, AI playbook</div>
+    <!-- Two Track Cards -->
+    <div class="pricing-hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px;">
+      <div class="chart-block reveal" style="border: 2px solid var(--green-primary); padding: 28px 24px;">
+        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 12px;">Track 1 -- Foundational Training</div>
+        <div style="font-family: var(--serif); font-size: 1.4rem; color: var(--green-deep); line-height: 1.25; margin-bottom: 12px;">Team Enablement Across the Full 15-Person Firm</div>
+        <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">Seven half-day sessions shaped for your team's existing Claude fluency. Foundations compressed, Cowork deep-dive added, role-specific cohorts for sourcing and portfolio operations, and a Closing Applied Workshop. Roughly two to three half-days per week -- learn without stepping away from deals.</div>
       </div>
-      <div class="chart-block reveal" style="border: 2px solid var(--amber); text-align: center; padding: 28px 20px;">
-        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 12px;">Phase 2: Enablement</div>
-        <div style="font-family: var(--serif); font-size: 2.8rem; color: var(--amber-dark); line-height: 1; margin-bottom: 4px;">$55-75K</div>
-        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 16px;">8-10 weeks</div>
-        <div style="font-size: 0.75rem; color: var(--text-tertiary); padding-top: 12px; border-top: 1px solid var(--border);">6 production AI tools, copilots, portfolio extension</div>
-      </div>
-      <div class="chart-block reveal" style="border: 2px solid var(--coral); text-align: center; padding: 28px 20px;">
-        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); margin-bottom: 12px;">Phase 3: Custom Dev</div>
-        <div style="font-family: var(--serif); font-size: 2.2rem; color: var(--coral); line-height: 1; margin-bottom: 4px;">Scoped after<br>Phase 2</div>
-        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 16px;">TBD</div>
-        <div style="font-size: 0.75rem; color: var(--text-tertiary); padding-top: 12px; border-top: 1px solid var(--border);">Dashboard, data consolidation, advanced builds</div>
-      </div>
-    </div>
-    <!-- Total Bar -->
-    <div class="total-bar" style="margin-top: 16px; background: #1A1A2E; border-radius: 12px; padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; color: #fff;">
-      <div style="font-size: 0.85rem; font-weight: 600; opacity: 0.8;">Phases 1-2 Total</div>
-      <div class="total-price" style="font-family: var(--serif); font-size: 2rem;">$80,000 - $110,000</div>
-    </div>
-
-    <!-- Phase Detail Cards -->
-    <div style="margin-top: 32px;">
-      <div class="phase-detail phase-1 reveal">
-        <div class="phase-detail-label" style="color: var(--green-primary);">Phase 1</div>
-        <div class="phase-detail-price">Team Deployment, Training &amp; Workflow Optimization</div>
-        <div class="phase-detail-duration">4-6 weeks -- $25,000-$35,000</div>
-        <ul>
-          <li>M365 inbox triage workflows for all 15 team members</li>
-          <li>2-3 training sessions: fundamentals, role-specific, advanced</li>
-          <li>ChatGPT Enterprise migration with context and workflows intact</li>
-          <li>AI usage standards, governance, and Cowork policy</li>
-          <li>Context file library and prompt architecture</li>
-          <li>7 active use case area optimizations</li>
-          <li>Call recording tool evaluation and recommendation</li>
-        </ul>
-      </div>
-      <div class="phase-detail phase-2 reveal">
-        <div class="phase-detail-label" style="color: var(--amber);">Phase 2</div>
-        <div class="phase-detail-price">Portfolio Company Deployment &amp; Operational Intelligence</div>
-        <div class="phase-detail-duration">8-10 weeks -- Scoped after Phase 1</div>
-        <ul>
-          <li>18 Claude Projects configured (one per portfolio company)</li>
-          <li>Zoom transcript to DealCloud skill</li>
-          <li>Messaging hook surfacing for outreach quality</li>
-          <li>Dynamic lead scoring with expert call integration</li>
-          <li>News aggregation monitoring</li>
-          <li>Meeting preparation agent</li>
-          <li>OneNote weekly digest</li>
-          <li>Portfolio company AI enablement extension</li>
-        </ul>
-      </div>
-      <div class="phase-detail phase-3 reveal">
-        <div class="phase-detail-label" style="color: var(--coral);">Phase 3</div>
-        <div class="phase-detail-price">Custom Development &amp; Advanced Architecture</div>
-        <div class="phase-detail-duration">Scoped and priced independently after Phase 2</div>
-        <ul>
-          <li>Consolidated portfolio dashboard (HubSpot pipeline + QuickBooks financials + market intel)</li>
-          <li>Unified data consolidation layer across 18 portfolio companies</li>
-          <li>HubSpot pipeline summaries and alerts across portfolio</li>
-          <li>QuickBooks MRR and financial visibility</li>
-          <li>DealCloud integrations and CRM automation</li>
-          <li>Market mapping tool for vertical sourcing</li>
-          <li>Firm connections identifier (LinkedIn Sales Navigator)</li>
-          <li>Architecture decisions timed to platform maturity</li>
-        </ul>
+      <div class="chart-block reveal" style="border: 2px solid var(--amber); padding: 28px 24px;">
+        <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 12px;">Track 2 -- Phase 2 Discovery</div>
+        <div style="font-family: var(--serif); font-size: 1.4rem; color: var(--amber-dark); line-height: 1.25; margin-bottom: 12px;">Scope the Future State, Collaboratively</div>
+        <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">One to two late-phase discovery sessions with you plus the Yelin.io team. Produces a Phase 2 SOW draft with two or three priced options -- grounded in what the team actually learned during training.</div>
       </div>
     </div>
 
-    <!-- Horizontal Timeline -->
+    <!-- Three Deliverable Tiles -->
+    <div class="chart-block reveal" style="margin-top: 32px;">
+      <div class="chart-title">Three Phase 1 Deliverables</div>
+      <div class="chart-subtitle">Visible outputs delivered to GGP during Phase 1</div>
+      <div class="deliverable-tiles" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 20px;">
+        <div style="padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 10px;">Week 3 &middot; Deliverable 1</div>
+          <div style="font-family: var(--serif); font-size: 1.15rem; color: var(--green-deep); line-height: 1.3; margin-bottom: 10px;">GGP Phase 1 Discovery & Training Plan</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Interactive HTML plus PDF delivered Week 3. Our homework and your training blueprint in one document: what we heard in discovery, a Cowork connectors playbook, security + governance guidelines, a public PE AI signals digest, and the tailored curriculum for the seven half-day sessions that follow.</div>
+        </div>
+        <div style="padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-primary); margin-bottom: 10px;">Weeks 3-5 &middot; Deliverable 2</div>
+          <div style="font-family: var(--serif); font-size: 1.15rem; color: var(--green-primary); line-height: 1.3; margin-bottom: 10px;">On-Site Foundational Training</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Half-day sessions shaped for your team's intermediate-to-advanced Claude fluency: a kickoff, three whole-team sessions (compressed 4Ds + a dedicated Cowork deep-dive), two role cohorts (sourcing + portfolio ops), and a Closing Applied Workshop. Seven half-days total across Weeks 3-5, ~2-3 per week so the team can fit it around their work.</div>
+        </div>
+        <div style="padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 10px;">Weeks 5-6 &middot; Deliverable 3</div>
+          <div style="font-family: var(--serif); font-size: 1.15rem; color: var(--amber-dark); line-height: 1.3; margin-bottom: 10px;">Phase 2 SOW Draft</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Two to three priced Phase 2 options with timeline and scope rationale, grounded in training outcomes and Track 2 discovery findings. Delivered in Word to you and James by end of Week 6.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inside the Discovery & Training Plan -->
     <div class="chart-block reveal" style="margin-top: 24px;">
-      <div class="chart-title">Engagement Timeline</div>
-      <div class="chart-subtitle">Go/No-Go reviews between each phase</div>
-      <div class="timeline-horiz">
-        <div class="timeline-horiz-seg" style="flex: 6; background: var(--green-primary);">Phase 1 (4-6 wks)</div>
-        <div class="timeline-horiz-gate"></div>
-        <div class="timeline-horiz-seg" style="flex: 10; background: var(--amber);">Phase 2 (8-10 wks)</div>
-        <div class="timeline-horiz-gate"></div>
-        <div class="timeline-horiz-seg" style="flex: 6; background: transparent; border: 2px dashed var(--coral); color: var(--coral);">Phase 3 (TBD)</div>
-      </div>
-      <div class="timeline-week-labels" style="display: flex; margin-top: 6px; font-size: 0.68rem; color: var(--text-tertiary);">
-        <span style="flex: 6; text-align: left;">Week 1</span>
-        <span style="flex: 10; text-align: left;">Week 6</span>
-        <span style="flex: 6; text-align: left;">Week 16</span>
+      <div class="chart-title">Inside the Discovery & Training Plan</div>
+      <div class="chart-subtitle">Our homework and your training blueprint in one document. Five sections, delivered Week 3.</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 6px;">Section 1</div>
+          <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--green-deep); line-height: 1.3; margin-bottom: 10px;">Discovery Findings</div>
+          <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">What we heard in five to six interviews with you plus reps from sourcing, portfolio ops, and deal execution. Workflow reality, stuck points, current tooling, what would move the needle. Grounds everything else in the Plan in what's actually happening at GGP today.</div>
+        </div>
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 6px;">Section 2</div>
+          <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--green-deep); line-height: 1.3; margin-bottom: 10px;">Cowork Connectors &amp; Integration Playbook</div>
+          <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Out-of-the-box connectors and known MCPs for GGP's stack -- DealCloud, HubSpot, M365, OneNote, Salesloft, Clay. Setup instructions your team can execute without writing code. <strong>Anything that requires custom development is Phase 2 territory.</strong> Phase 1 stays on Cowork + Claude core functionality. GGP walks away able to manage and extend their own connectors.</div>
+        </div>
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); margin-bottom: 6px;">Section 3</div>
+          <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--navy); line-height: 1.3; margin-bottom: 10px;">Security + Governance Guidelines</div>
+          <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Cowork usage model mapped to GGP's risk posture (MNPI, portfolio financials, live deal data). Skill publishing controls and review workflow. Anthropic Trust Center findings (SOC 2, data retention, residency) packaged for partner-level review. GGP-specific Acceptable Use Guidelines derived from Anthropic's Usage Policies.</div>
+        </div>
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 6px;">Section 4</div>
+          <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--amber-dark); line-height: 1.3; margin-bottom: 10px;">Public AI Adoption Signals in PE</div>
+          <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Curated digest of publicly disclosed AI initiatives at comparable PE firms -- Blackstone, KKR, Vista, Apollo announcements; Anthropic, OpenAI, and Google customer case studies; BVP, McKinsey, and Axios Pro Rata coverage. Synthesis of public sources for context -- not proprietary access.</div>
+        </div>
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff; grid-column: 1 / -1;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); margin-bottom: 6px;">Section 5 &middot; The Training Blueprint</div>
+          <div style="font-family: var(--serif); font-size: 1.08rem; color: var(--coral); line-height: 1.3; margin-bottom: 10px;">Tailored Training Curriculum</div>
+          <div style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">The actual content for the seven half-day sessions -- topics, exercises, prompts, examples -- built from the Discovery Findings (Section 1) and Anthropic's AI Fluency 4Ds framework. Compressed where your team is already fluent; deeper on Cowork where the value is newest. Not a generic curriculum. Every example, demo, and exercise reflects GGP's own workflows as surfaced in the interviews.</div>
+        </div>
       </div>
     </div>
 
-    <!-- Investment Table -->
+    <!-- Training Structure Callout -->
+    <div class="callout reveal" style="margin-top: 24px; border-left-color: var(--green-primary);">
+      <div class="callout-title">Training Structure</div>
+      <div class="callout-text">Training is delivered as <strong>half-day sessions only</strong> so your team can fit learning around their day-jobs. Seven half-days total across Weeks 3-5, shaped for your intermediate-to-advanced Claude fluency. Structure: a kickoff half-day opens Week 3; three whole-team sessions follow -- Delegation + Description compressed for a team that already prompts daily, then Discernment + Diligence as a full session on evaluation and MNPI/compliance guardrails, then a dedicated Cowork deep-dive on skills, projects, and advanced features. Two half-day role cohorts follow (sourcing and portfolio operations), and a Closing Applied Workshop at the end of Week 5 where the team applies to their own work. Grounded in Anthropic's AI Fluency framework -- source material we build from, not courseware we send you to.</div>
+    </div>
+
+    <!-- Phase 1 Timeline (3-column branches off main) -->
     <div class="chart-block reveal" style="margin-top: 24px;">
-      <div class="chart-title">Investment Summary</div>
-      <div class="chart-subtitle">All fees are fixed-price per phase</div>
-      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-      <table class="data-table" style="min-width: 480px;">
-        <thead>
-          <tr>
-            <th>Phase</th>
-            <th>Duration</th>
-            <th>Investment</th>
-            <th>Commitment</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Phase 1: Foundation</strong></td>
-            <td>4-6 weeks</td>
-            <td class="highlight">$25,000-$35,000</td>
-            <td><span class="badge badge-green-accent">Upfront</span></td>
-          </tr>
-          <tr>
-            <td><strong>Phase 2: Enablement</strong></td>
-            <td>8-10 weeks</td>
-            <td>$55,000-$75,000</td>
-            <td><span class="badge badge-amber">After Go/No-Go</span></td>
-          </tr>
-          <tr>
-            <td><strong>Phase 3: Custom Dev</strong></td>
-            <td>TBD</td>
-            <td>Scoped independently after Phase 2</td>
-            <td><span class="badge badge-amber">After Go/No-Go</span></td>
-          </tr>
-          <tr style="border-top: 2px solid var(--border);">
-            <td><strong>Phases 1-2 Total</strong></td>
-            <td><strong>12-16 weeks</strong></td>
-            <td><strong class="highlight">$80,000-$110,000</strong></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="chart-title">Phase 1 Timeline</div>
+      <div class="chart-subtitle">Five to six weeks from kickoff. NDA signed; kickoff one week from signature. What each phase covers, your team's time commitment, our backend work, and the deliverable at the end.</div>
+
+      <!-- Horizontal gradient spine -->
+      <div style="height: 2px; background: linear-gradient(to right, var(--green-primary), var(--green-deep), var(--amber)); margin: 26px 0 22px 0; border-radius: 2px;"></div>
+
+      <!-- 3 columns -->
+      <div class="timeline-columns" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+
+        <!-- Column 1: Weeks 1-2 Research & Prep -->
+        <div style="padding: 0 4px;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-primary); margin-bottom: 4px;">Weeks 1-2</div>
+          <div style="font-family: var(--serif); font-size: 1.25rem; color: var(--green-deep); line-height: 1.25; margin-bottom: 16px;">Research &amp; Prep</div>
+
+          <div style="border-left: 2px solid var(--green-primary); padding-left: 14px; margin-bottom: 14px;">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;">What Happens</div>
+            <ul style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55; margin: 0; padding-left: 16px;">
+              <li>5-6 discovery interviews (30 min each)</li>
+              <li>Tech stack review (1-2 hrs)</li>
+              <li>Public AI signals digest compilation</li>
+              <li>Curriculum tailoring</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 2px solid var(--border); padding-left: 14px; margin-bottom: 14px;">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;">GGP's Time</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">~3-4 hours across the team, spread over two weeks. Light lift.</div>
+          </div>
+
+          <div style="border-left: 2px solid var(--border); padding-left: 14px; margin-bottom: 14px;">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;">Our Backend</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Interview synthesis. Curriculum design. Connectors research. Public signals compilation. Writing the Plan.</div>
+          </div>
+
+          <div style="padding: 12px 14px; background: var(--green-wash); border-radius: 6px; border-left: 3px solid var(--green-primary);">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 4px;">Deliverable &middot; Week 3</div>
+            <div style="font-size: 0.9rem; color: var(--green-deep); line-height: 1.35; font-weight: 600;">GGP Phase 1 Discovery &amp; Training Plan</div>
+          </div>
+        </div>
+
+        <!-- Column 2: Weeks 3-5 Training Delivery -->
+        <div style="padding: 0 4px;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 4px;">Weeks 3-5</div>
+          <div style="font-family: var(--serif); font-size: 1.25rem; color: var(--green-deep); line-height: 1.25; margin-bottom: 16px;">Training Delivery</div>
+
+          <div style="border-left: 2px solid var(--green-deep); padding-left: 14px; margin-bottom: 14px;">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;">What Happens</div>
+            <ul style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55; margin: 0; padding-left: 16px;">
+              <li>Kickoff half-day opens Week 3</li>
+              <li>3 whole-team half-days (Wks 3-4): compressed 4Ds + Cowork deep-dive</li>
+              <li>2 role cohorts (Wks 4-5, sourcing + ops)</li>
+              <li>Closing Applied Workshop (end Wk 5)</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 2px solid var(--border); padding-left: 14px; margin-bottom: 14px;">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;">GGP's Time</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Roughly two to three half-days per week across the 15-person team.</div>
+          </div>
+
+          <div style="border-left: 2px solid var(--border); padding-left: 14px; margin-bottom: 14px;">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;">Our Backend</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Session prep per cohort. Live on-site delivery. Curriculum refinement between sessions based on where the team is landing.</div>
+          </div>
+
+          <div style="padding: 12px 14px; background: var(--green-wash); border-radius: 6px; border-left: 3px solid var(--green-deep);">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 4px;">Deliverable &middot; End of Week 5</div>
+            <div style="font-size: 0.9rem; color: var(--green-deep); line-height: 1.35; font-weight: 600;">Trained team + applied workflow demos from the Closing Applied Workshop</div>
+          </div>
+        </div>
+
+        <!-- Column 3: Weeks 5-6 Phase 2 Scoping -->
+        <div style="padding: 0 4px;">
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 4px;">Weeks 5-6</div>
+          <div style="font-family: var(--serif); font-size: 1.25rem; color: var(--amber-dark); line-height: 1.25; margin-bottom: 16px;">Phase 2 Scoping</div>
+
+          <div style="border-left: 2px solid var(--amber); padding-left: 14px; margin-bottom: 14px;">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;">What Happens</div>
+            <ul style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55; margin: 0; padding-left: 16px;">
+              <li>1-2 late-phase discovery sessions with you + a GGP subset</li>
+              <li>Phase 2 scope options drafted</li>
+              <li>Pricing + timeline packaged in Word</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 2px solid var(--border); padding-left: 14px; margin-bottom: 14px;">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;">GGP's Time</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">1-2 sessions with you and a subset. ~2-3 hours total.</div>
+          </div>
+
+          <div style="border-left: 2px solid var(--border); padding-left: 14px; margin-bottom: 14px;">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;">Our Backend</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Track 2 synthesis from training outcomes. Phase 2 SOW drafting with two to three priced options.</div>
+          </div>
+
+          <div style="padding: 12px 14px; background: #FFF8EC; border-radius: 6px; border-left: 3px solid var(--amber);">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 4px;">Deliverable &middot; End of Week 6</div>
+            <div style="font-size: 0.9rem; color: var(--amber-dark); line-height: 1.35; font-weight: 600;">Phase 2 SOW Draft (Word, priced options)</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- M365 Copilot Callout -->
-    <div class="callout amber-callout reveal" style="margin-top: 24px;">
-      <div class="callout-title">A Note on M365 Copilot</div>
-      <div class="callout-text">We are aware that M365 Copilot offers native capabilities for some of the day-to-day tasks your team handles, such as email triage, meeting summaries, and single-document analysis. Our engagement is focused on the work that M365 Copilot cannot do: reasoning across your full portfolio, connecting systems like DealCloud, HubSpot, and QuickBooks into unified workflows, and building the AI operating model that makes a 15-person team perform like a much larger one.</div>
+    <!-- Investment Block -->
+    <div class="chart-block reveal" style="margin-top: 24px;">
+      <div class="chart-title">Phase 1 Investment</div>
+      <div class="chart-subtitle">Fixed fee. Travel included. Phase 2 scoped and priced in Phase 1.</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px;">
+        <div style="padding: 26px; border: 2px solid var(--green-primary); border-radius: 10px; text-align: center; background: #fff;">
+          <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 10px;">Phase 1 &middot; Fixed Fee</div>
+          <div style="font-family: var(--serif); font-size: 2.8rem; color: var(--green-deep); line-height: 1; margin-bottom: 6px;">$22,000</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">Five to six weeks</div>
+          <div style="font-size: 0.75rem; color: var(--text-tertiary); padding-top: 12px; border-top: 1px solid var(--border); line-height: 1.55;">50 percent at signature, 50 percent at Phase 1 completion. Drive-in travel included. Exclusive of tool subscriptions (Claude Business, existing GGP licenses).</div>
+        </div>
+        <div style="padding: 26px; border: 2px dashed var(--amber); border-radius: 10px; text-align: center; background: #FFF8EC;">
+          <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 10px;">Phase 2 &middot; Preferred Engagement</div>
+          <div style="font-family: var(--serif); font-size: 1.6rem; color: var(--amber-dark); line-height: 1.15; margin-bottom: 6px;">Scoped in Phase 1</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">Priced options delivered Week 6</div>
+          <div style="font-size: 0.75rem; color: var(--text-tertiary); padding-top: 12px; border-top: 1px solid var(--border); line-height: 1.55;">Phase 1 is priced below Yelin.io's list rate in exchange for GGP's right of first refusal on Phase 2 at the Week 6 quote. Thirty days post-Phase 1 to accept or return to open market.</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Why Phase 3 Comes Last -->
+    <!-- Why Phase 2 Follows Training -->
     <div class="callout reveal" style="margin-top: 16px;">
-      <div class="callout-title">Why Phase 3 Comes Last</div>
-      <div class="callout-text">The AI platforms -- Anthropic, OpenAI, Google -- are shipping new native connectors and capabilities on a near-weekly basis. Every week of custom development we defer has a real chance of being replaced by out-of-the-box functionality that is more reliable and more maintainable. Phases 1 and 2 give us time to evaluate the integration landscape and lock in the right architecture before committing investment to custom work that could become redundant.</div>
+      <div class="callout-title">Why Phase 2 Follows Training</div>
+      <div class="callout-text">Phase 2 scope is deferred by design. Your team will surface sharper, better-grounded Phase 2 ideas once they have seen what Claude and Cowork can actually do in day-to-day work. Track 2 discovery sessions are timed for Weeks 4-5; the Phase 2 SOW drafts in Weeks 5-6, informed by the training and not ahead of it.</div>
     </div>
   </div>
 </section>
@@ -1461,7 +1253,7 @@ body {
 <section class="section" id="team">
   <div class="wrap">
     <div class="reveal">
-      <div class="section-label">06 -- Team</div>
+      <div class="section-label">03 -- Team</div>
       <h2>A Team Built for PE</h2>
       <p class="section-lead">Proven PE, AI Engineering, and Enterprise Transformation expertise tailored to GGP.</p>
     </div>
@@ -1505,7 +1297,7 @@ body {
 <section class="section" id="next">
   <div class="wrap">
     <div class="reveal">
-      <div class="section-label">07 -- Next Steps</div>
+      <div class="section-label">04 -- Next Steps</div>
       <h2>Ready When You Are</h2>
       <p class="section-lead">Four steps to kick off. Phase 1 can begin within one week of signing.</p>
     </div>
@@ -1519,7 +1311,7 @@ body {
       <div class="next-card reveal">
         <div class="next-card-tag">Step 2</div>
         <h4>Review Proposal</h4>
-        <p>Andrew and James review this document. We will walk through any section in detail on a call.</p>
+        <p>You and James review this document. We will walk through any section in detail on a call.</p>
       </div>
       <div class="next-card reveal">
         <div class="next-card-tag">Step 3</div>
@@ -1540,6 +1332,49 @@ body {
   </div>
 </section>
 
+<!-- ========== WHAT WE'VE ACCOUNTED FOR (compressed context) ========== -->
+<section class="section" id="context">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-label">05 -- What We've Accounted For</div>
+      <h2>Context, Not Curriculum.</h2>
+      <p class="section-lead">Our discovery sessions from February through April 2026 mapped GGP's sourcing, deal execution, and portfolio operations workflows. Listed below for the record. These are inputs to Phase 1 research; Phase 2 scoping revisits them with fresh data from training. Nothing here needs re-teaching to the GGP team.</p>
+    </div>
+
+    <div class="chart-block reveal" style="margin-top: 24px;">
+      <div class="chart-title">Discovery Artifacts Received</div>
+      <div class="chart-subtitle">GGP-provided documents that inform Phase 1 research</div>
+      <div class="status-grid" style="margin-top: 14px;">
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>AI Usage Best Practices</strong> 11-page team reference (Mar 27, 2026). Eight active use-case areas documented.</div>
+        <div class="status-item"><div class="status-dot green-accent"></div><strong>AI Strategy Brief</strong> 8-page document (Mar 30, 2026). Three functional areas, pain points, AI vision, quick wins.</div>
+        <div class="status-item"><div class="status-dot amber"></div><strong>March 12 Deep-Dive</strong> 90-minute session: current AI use cases plus aspirational builds.</div>
+      </div>
+    </div>
+
+    <div class="chart-block reveal" style="margin-top: 16px;">
+      <div class="chart-title">Three Functional Areas in Scope</div>
+      <div class="chart-subtitle">Where Phase 1 research validates and Phase 2 scoping focuses</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 18px;">
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-family: var(--serif); font-size: 1.05rem; color: var(--green-deep); margin-bottom: 8px;">Sourcing</div>
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-primary); margin-bottom: 10px;">Most Developed</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">6,500 active prospects, DealCloud-centric. Claude already in daily use for research, outreach, CRM. Candidate quick wins surface in Phase 2 scoping.</div>
+        </div>
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-family: var(--serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 8px;">Deal Execution</div>
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 10px;">Early Stage</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Least-developed area. QuickBooks integration and intelligent data-room search identified. Natural Phase 2 focus once foundations are in place.</div>
+        </div>
+        <div style="padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: #fff;">
+          <div style="font-family: var(--serif); font-size: 1.05rem; color: var(--amber-dark); margin-bottom: 8px;">Portfolio Ops</div>
+          <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 10px;">Well Developed</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">HubSpot pipelines, QuickBooks financials, competitive intel scattered today. Consolidated dashboard across 18 portfolio companies is a Phase 2 candidate.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
   <div class="footer-logo">YELIN.IO</div>
@@ -1556,21 +1391,9 @@ body {
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
       Summary
     </a></li>
-    <li><a href="#sourcing" data-section="sourcing">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      Sourcing
-    </a></li>
-    <li><a href="#deal" data-section="deal">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      Deal
-    </a></li>
-    <li><a href="#portfolio" data-section="portfolio">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 3l-4 4-4-4"/></svg>
-      Portfolio
-    </a></li>
     <li><a href="#investment" data-section="investment">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-      Invest
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Phase 1
     </a></li>
     <li><a href="#team" data-section="team">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
@@ -1579,6 +1402,10 @@ body {
     <li><a href="#next" data-section="next">
       <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       Next
+    </a></li>
+    <li><a href="#context" data-section="context">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+      Context
     </a></li>
   </ul>
 </nav>
@@ -1622,7 +1449,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Scroll spy -- shared section detection for side nav + mobile nav
-  var sectionIds = ['summary', 'sourcing', 'deal', 'portfolio', 'investment', 'team', 'next'];
+  var sectionIds = ['summary', 'investment', 'team', 'next', 'context'];
   var sectionEls = sectionIds.map(function(id) { return document.getElementById(id); });
   var sideLinks = document.querySelectorAll('.side-nav-item');
   var sideNav = document.getElementById('sideNav');
