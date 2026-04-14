@@ -41,6 +41,8 @@
   --amber: #D4A853;
   --amber-dark: #C8960B;
   --amber-wash: #FFF8EC;
+  /* Contrast-safe amber text on amber-wash (verified ~5.5:1 AA). --amber-dark is for accent borders/eyebrows only, not body text. */
+  --amber-text: #8A6708;
 
   --navy: #1A1A2E;
   --green-accent: #4BAF50;
@@ -84,7 +86,8 @@
   --green-deep: #6CCCA0;
   --green-wash: rgba(77,184,138,0.14);
   --green-wash-alt: rgba(77,184,138,0.08);
-  --amber-wash: rgba(212,168,83,0.12);
+  --amber-wash: rgba(212,168,83,0.2);
+  --amber-text: #E5B45F;
   --green-accent-wash: rgba(75,175,80,0.12);
   --coral-wash: rgba(232,112,74,0.12);
   --red-wash: rgba(224,82,82,0.12);
@@ -110,8 +113,20 @@
 [data-theme="dark"] .phase-detail ul { color: var(--text-secondary); }
 [data-theme="dark"] .chart-subtitle { color: var(--text-secondary); }
 
+/* ---- Keyboard Focus (scoped to real interactive elements) ---- */
+.theme-toggle:focus-visible,
+.nav-links a:focus-visible,
+.mobile-nav-links a:focus-visible,
+.side-nav-item:focus-visible,
+footer a:focus-visible {
+  outline: 2px solid var(--green-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* ---- Theme Toggle ---- */
 .theme-toggle {
+  position: relative;
   background: none;
   border: 1px solid var(--border);
   border-radius: 100px;
@@ -126,6 +141,12 @@
   display: flex;
   align-items: center;
   gap: 6px;
+}
+/* Expand clickable area to meet 44x44px without visual bulk. */
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
 }
 .theme-toggle:hover { color: var(--green-primary); border-color: var(--green-primary); }
 
@@ -230,7 +251,8 @@ body {
 }
 .hero h1 {
   font-family: var(--serif);
-  font-size: 2.8rem;
+  /* Fluid scale: 1.5rem (iPhone SE) up to 2.8rem (desktop). Fits 320px viewport without a 3rd-line wrap on "for Greenridge Growth Partners". */
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
   font-weight: 400;
   line-height: 1.18;
   color: var(--navy);
@@ -428,7 +450,7 @@ body {
   letter-spacing: 0.04em;
 }
 .badge-green-accent { background: var(--green-accent-wash); color: var(--green-accent); }
-.badge-amber { background: var(--amber-wash); color: var(--amber-dark); }
+.badge-amber { background: var(--amber-wash); color: var(--amber-text); }
 .badge-red { background: var(--red-wash); color: var(--red); }
 .badge-green-primary { background: var(--green-wash); color: var(--green-deep); }
 
@@ -802,7 +824,6 @@ body {
 
   /* Hero */
   .hero { min-height: auto; padding: 60px 20px 40px; }
-  .hero h1 { font-size: 1.8rem; }
   .hero-sub { font-size: 0.82rem; }
   .hero-client { font-size: 0.85rem; }
 
@@ -832,8 +853,7 @@ body {
 
   /* Mobile: tighter kpi row, nav font */
   .kpi-row { gap: 10px; }
-  .kpi-value { font-size: 2.2rem !important; }
-  .hero h1 { font-size: 2rem !important; line-height: 1.2; }
+  .kpi-value { font-size: 1.6rem; }
   .hero-sub { font-size: 0.95rem; }
   .section-label { font-size: 0.62rem; }
   .callout { padding: 16px 18px; margin-top: 20px; }
@@ -855,9 +875,6 @@ body {
     font-size: 0.75rem;
   }
   .timeline-horiz-gate { display: none; }
-
-  /* Callouts */
-  .callout { padding: 16px 18px; }
 
   /* Investment table scroll */
   .data-table { font-size: 0.72rem; }
@@ -1274,9 +1291,9 @@ body {
             <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">Track 2 synthesis from training outcomes. Phase 2 SOW drafting with two to three priced options.</div>
           </div>
 
-          <div style="padding: 12px 14px; background: #FFF8EC; border-radius: 6px; border-left: 3px solid var(--amber);">
-            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 4px;">Deliverable &middot; End of Week 6</div>
-            <div style="font-size: 0.9rem; color: var(--amber-dark); line-height: 1.35; font-weight: 600;">Phase 2 SOW Draft (Word, priced options)</div>
+          <div style="padding: 12px 14px; background: var(--amber-wash); border-radius: 6px; border-left: 3px solid var(--amber);">
+            <div style="font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber-text); margin-bottom: 4px;">Deliverable &middot; End of Week 6</div>
+            <div style="font-size: 0.9rem; color: var(--amber-text); line-height: 1.35; font-weight: 600;">Phase 2 SOW Draft (Word, priced options)</div>
           </div>
         </div>
 
@@ -1294,9 +1311,9 @@ body {
           <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">Five to six weeks</div>
           <div style="font-size: 0.75rem; color: var(--text-tertiary); padding-top: 12px; border-top: 1px solid var(--border); line-height: 1.55;">50 percent at signature, 50 percent at Phase 1 completion. Drive-in travel included. Exclusive of tool subscriptions (Claude Business, existing GGP licenses).</div>
         </div>
-        <div style="padding: 26px; border: 2px dashed var(--amber); border-radius: 10px; text-align: center; background: #FFF8EC;">
-          <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 10px;">Phase 2 &middot; Preferred Engagement</div>
-          <div style="font-family: var(--serif); font-size: 1.6rem; color: var(--amber-dark); line-height: 1.15; margin-bottom: 6px;">Scoped in Phase 1</div>
+        <div style="padding: 26px; border: 2px dashed var(--amber); border-radius: 10px; text-align: center; background: var(--amber-wash);">
+          <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-text); margin-bottom: 10px;">Phase 2 &middot; Preferred Engagement</div>
+          <div style="font-family: var(--serif); font-size: 1.6rem; color: var(--amber-text); line-height: 1.15; margin-bottom: 6px;">Scoped in Phase 1</div>
           <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">Priced options delivered Week 6</div>
           <div style="font-size: 0.75rem; color: var(--text-tertiary); padding-top: 12px; border-top: 1px solid var(--border); line-height: 1.55;">Phase 1 is priced below Yelin.io's list rate in exchange for GGP's right of first refusal on Phase 2 at the Week 6 quote. Thirty days post-Phase 1 to accept or return to open market.</div>
         </div>
